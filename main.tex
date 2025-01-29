@@ -95,6 +95,28 @@
 \newcommand{\CONCelular}{() 2}
 \newcommand{\CONemail}{ADD 2}
 
+% 2.3 Interveniente (caso exista)
+\newcommand{\INRazaosocial}{ADD 2}
+\newcommand{\INEndereco}{ADIND 2}
+\newcommand{\INBairro}{ADD 2}
+\newcommand{\INMunicipio}{ADD 2}
+%\newcommand{\UF}{ADD}  MUDAR NO TABELA
+%\newcommand{\CEP}{ADD} MUDAR NA TABELA
+\newcommand{\INTelefone}{() 2}
+\newcommand{\INCelular}{() INCelular2}
+\newcommand{\INemail}{INemail 2}
+
+% 2.1 Co-executor N (caso exista)
+\newcommand{\INNRazaosocial}{ADD 2}
+\newcommand{\INNEndereco}{ADD 2}
+\newcommand{\INNBairro}{ADD 2}
+\newcommand{\INNMunicipio}{ADD 2}
+%\newcommand{\UF}{ADD}  MUDAR NO TABELA
+%\newcommand{\CEP}{ADD} MUDAR NA TABELA
+\newcommand{\INNTelefone}{() 2}
+\newcommand{\INNCelular}{() 2}
+\newcommand{\INNemail}{ADD 2}
+
 %===================Capa===================%
 
 %\setlength{\headheight}{20pt}% Aumenta a altura do cabeçalho
@@ -630,7 +652,7 @@
     \multicolumn{3}{|l||}{ Razão Social}  & 
                             CNPJ \textit{(0123456789/0001-22)}  \\
 
-     \multicolumn{3}{|l||}{\fontsize{8}{10}\selectfont \Razaosocial2}  & 
+     \multicolumn{3}{|l||}{\fontsize{8}{10}\selectfont \INRazaosocial}  & 
 \setlength{\tabcolsep}{2.599pt} % Reduz o espaço entre colunas
 \begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c} 
          0 & 
@@ -657,7 +679,7 @@
     \multicolumn{3}{|l||}{{Endereço \textit{(logradouro;n\degree;complemento)}}}  &
      {Bairro} \\ 
 
-       \multicolumn{3}{|l||}{   \COEndereco}     &                              
+       \multicolumn{3}{|l||}{   \INEndereco}     &                              
        \COBairro 
     \\ \hline\hline % Linha que separa as colunas
     
@@ -666,7 +688,7 @@
      UF &
      CEP \textit{(12345-678)} \\
     
-    \multicolumn{2}{|l||}{  \COMunicipio}  &
+    \multicolumn{2}{|l||}{  \INMunicipio}  &
     
     {%===================\UF===================
     \setlength{\tabcolsep}{1.5pt}
@@ -695,9 +717,9 @@
      Celular\textit{(cód.de área-n\degree)} &
     \multicolumn{2}{l|}{ E-mail} \\
     
-    {  \COTelefone} &
-    {  \COCelular} &
-    \multicolumn{2}{l|}{  \COemail}   \\\hline
+    {  \INTelefone} &
+    {  \INCelular} &
+    \multicolumn{2}{l|}{  \INemail}   \\\hline
 \end{tabular}}
 \end{table}
 %---------------------------Interveniente N -------------------------%
@@ -714,7 +736,7 @@
     \multicolumn{3}{|l||}{ Razão Social}     & 
     \fontsize{8}{10}\selectfont CNPJ \textit{(0123456789/0001-22)}  \\
 
-     \multicolumn{3}{|l||}{ \CONRazaosocial} & 
+     \multicolumn{3}{|l||}{ \INNRazaosocial} & 
 \setlength{\tabcolsep}{2.5pt} % Reduz o espaço entre colunas
 \begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c} 
          0 & 
@@ -740,7 +762,7 @@
     \rowcolor{lightgray}
     \multicolumn{3}{|l||}{{Endereço \textit{(logradouro;n\degree;complemento)}}}  &   {Bairro} \\ 
     
-   \multicolumn{3}{|l||}{\CONEndereco}     &        \CONBairro 
+   \multicolumn{3}{|l||}{\INNEndereco}     &        \INNBairro 
     \\ \hline\hline % Linha que separa as colunas
     
     \rowcolor{lightgray}
@@ -748,7 +770,7 @@
     UF &
     CEP \textit{(12345-678)} \\
     
-    \multicolumn{2}{|l||}{\CONMunicipio}    &
+    \multicolumn{2}{|l||}{\INNMunicipio}    &
     
     {%\UF
     \setlength{\tabcolsep}{1.5pt}
@@ -765,7 +787,7 @@
                        3                   &
                        4                   &
                        5                   &
-        \cellcolor{lightgray}{\fontsize{8}{10}\selectfont \textbf{-}} &
+        \cellcolor{lightgray}{\textbf{-}} &
                        6                   &
                        7                   &
                        8                   \\
@@ -777,9 +799,9 @@
      Celular\textit{(cód.de área-n\degree)} &  %Celular
     \multicolumn{2}{l|}{ E-mail} \\            %Email
     
-    {\CONTelefone} &
-    {\CONCelular} &
-    \multicolumn{2}{l|}{\CONemail}   \\\hline
+    {\INNTelefone} &
+    {\INNCelular} &
+    \multicolumn{2}{l|}{\INNemail}   \\\hline
 \end{tabular}}
 \end{table}
 
