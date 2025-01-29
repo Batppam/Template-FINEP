@@ -97,24 +97,7 @@
 \newcommand{\CONemail}{ADD 2}
 
 %===================Capa===================%
-%\thisfancypage{\setlength{\fboxsep}{15pt}\doublebox}{}
-%    \fancypagestyle{firstpage}{
-%    \fancyhf{} % Sem cabeçalho e rodapé
-%    \renewcommand{\headrulewidth}{0pt}
-%    \renewcommand{\footrulewidth}{0pt}
 
-   
-% Desenhar borda diretamente na página
-    %\AtBeginShipoutFirst{%
-     %   \begin{tikzpicture}[remember picture, overlay]
-       %     \draw[line width=0.5pt] 
-        %        ([xshift=-2.5cm, yshift=-2.5cm]current page.south west) 
-         %       rectangle 
-          %      ([xshift=2.5cm, yshift=2.5cm]current page.north east);
-        %\end{tikzpicture}
-
-
-%------------------------------------------------------------------------------%
 %\setlength{\headheight}{20pt}% Aumenta a altura do cabeçalho
 \setlength{\headsep}{85 pt} % Espaçamento entre o cabeçalho e o texto
 % Linhas horizontais no cabeçalho
@@ -223,12 +206,15 @@
 
 \textbf{Período de execução deste relatório \fontsize{8}{10}\selectfont(mm/aa a mm/aa):}
 
-\restoregeometry % Voltar com as margens
+%\restoregeometry % Voltar com as margens
 \newpage  
+\thispagestyle{empty}
 
-\tableofcontents  % Sumário
+\newgeometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm} % Margens
+     
+    \tableofcontents  % Sumário
 
-	
+\restoregeometry	
 \newpage
 	
 % Páginas seguintes sem borda
@@ -462,7 +448,7 @@
 \noindent % Remove o recuo no início da linha
 \rule{\textwidth}{2pt} % Linha preenchendo a largura do texto e com 2pt de espessura
 
-
+%Co-executor 
 \subsection{Co-executor (caso exista)}
 \vspace{-0.7cm} % Subir tabela
 %\begin{tabular}{|p{6.5cm}||p{2cm}||p{6cm}|} % Adiciona linhas verticais entre as colunas
@@ -629,11 +615,181 @@
 \end{tabular}}
 \end{table}
 \newpage
+%---------------------------INTERVENIENTE-------------------------%
+
+%Co-executor 
+\subsection{Interveniente (caso exista)}
+\vspace{-0.7cm} % Subir tabela
+%\begin{tabular}{|p{6.5cm}||p{2cm}||p{6cm}|} % Adiciona linhas verticais entre as colunas
+\begin{table}[h]
+\resizebox{\textwidth}{!}{ % Ajusta a tabela para a largura total da página
+\fontsize{8}{10}\selectfont
+\begin{tabular}{|p{4.25cm}||p{4.25cm}||p{0.5cm}||p{6cm}|} 
+    \multicolumn{3}{l}{\textbf{}}    \\  
+    \hline\hline % Linha horizontal que ocupa toda a largura
+    \rowcolor{lightgray}
+    \multicolumn{3}{|l||}{ Razão Social}  & 
+                            CNPJ \textit{(0123456789/0001-22)}  \\
+
+     \multicolumn{3}{|l||}{\fontsize{8}{10}\selectfont \Razaosocial2}  & 
+\setlength{\tabcolsep}{2.599pt} % Reduz o espaço entre colunas
+\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c} 
+         0 & 
+         1 &  
+         2 & 
+         3 &  
+         4 & 
+         5 & 
+         6 & 
+         7 &  
+         8 & 
+         9 & 
+        \cellcolor{lightgray}{\textbf{/}} & 
+         0 & 
+         0 & 
+         0 & 
+         1 &
+        \cellcolor{lightgray}{\textbf{-}} &
+         2 &
+         2  
+        \end{tabular}
+      \\\hline\hline   % Linha que separa as colunas
+    \rowcolor{lightgray}
+    \multicolumn{3}{|l||}{{Endereço \textit{(logradouro;n\degree;complemento)}}}  &
+     {Bairro} \\ 
+
+       \multicolumn{3}{|l||}{   \COEndereco}     &                              
+       \COBairro 
+    \\ \hline\hline % Linha que separa as colunas
+    
+    \rowcolor{lightgray}
+    \multicolumn{2}{|l||}{{\ Município}}    &
+     UF &
+     CEP \textit{(12345-678)} \\
+    
+    \multicolumn{2}{|l||}{  \COMunicipio}  &
+    
+    {%===================\UF===================
+    \setlength{\tabcolsep}{1.5pt}
+    \begin{tabular}{c|c}
+                       U                   & 
+                       F
+    \end{tabular}}                         &
+    
+    {%===================\CEP===================
+    \setlength{\tabcolsep}{7.5pt}
+    \begin{tabular}{c|c|c|c|c|c|c|c|c}
+                       1                   & 
+                       2                   &
+                       3                   &
+                       4                   &
+                       5                   &
+        \cellcolor{lightgray}{ \textbf{-}} &
+                       6                   &
+                       7                   &
+                       8                   \\
+    \end{tabular}}                                                    
+    \\ \hline\hline  % Linha que separa as colunas
+
+    \rowcolor{lightgray}
+     Telefone\textit{(cód.de área-n\degree)} &
+     Celular\textit{(cód.de área-n\degree)} &
+    \multicolumn{2}{l|}{ E-mail} \\
+    
+    {  \COTelefone} &
+    {  \COCelular} &
+    \multicolumn{2}{l|}{  \COemail}   \\\hline
+\end{tabular}}
+\end{table}
+%---------------------------Interveniente N -------------------------%
+
+\subsection{Interveniente N (caso exista)}
+\vspace{-0.7cm} % Subir tabela
+\begin{table}[h]  
+\resizebox{\textwidth}{!}{ % Ajusta a tabela para a largura total da página
+\fontsize{8}{10}\selectfont
+\begin{tabular}{|p{4.25cm}||p{4.25cm}||p{0.5cm}||p{6cm}|} 
+    \multicolumn{3}{l}{\textbf{}}    \\  
+    \hline\hline % Linha horizontal que ocupa toda a largura
+    \rowcolor{lightgray}
+    \multicolumn{3}{|l||}{ Razão Social}     & 
+    \fontsize{8}{10}\selectfont CNPJ \textit{(0123456789/0001-22)}  \\
+
+     \multicolumn{3}{|l||}{ \CONRazaosocial} & 
+\setlength{\tabcolsep}{2.5pt} % Reduz o espaço entre colunas
+\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c} 
+         0 & 
+         1 &  
+         2 & 
+         3 &  
+         4 & 
+         5 & 
+         6 & 
+         7 &  
+         8 & 
+         9 & 
+        \cellcolor{lightgray}{\textbf{/}} & 
+         0 & 
+         0 & 
+         0 & 
+         1 &
+        \cellcolor{lightgray}{\textbf{-}} &
+         2 &
+         2  
+        \end{tabular}
+      \\\hline\hline   % Linha que separa as colunas
+    \rowcolor{lightgray}
+    \multicolumn{3}{|l||}{{Endereço \textit{(logradouro;n\degree;complemento)}}}  &   {Bairro} \\ 
+    
+   \multicolumn{3}{|l||}{\CONEndereco}     &        \CONBairro 
+    \\ \hline\hline % Linha que separa as colunas
+    
+    \rowcolor{lightgray}
+    \multicolumn{2}{|l||}{{Município}}       &
+    UF &
+    CEP \textit{(12345-678)} \\
+    
+    \multicolumn{2}{|l||}{\CONMunicipio}    &
+    
+    {%\UF
+    \setlength{\tabcolsep}{1.5pt}
+    \begin{tabular}{c|c}
+                       U                   & 
+                       F
+    \end{tabular}}                        &
+    
+    {%\CEP
+    \setlength{\tabcolsep}{7.5pt}
+    \begin{tabular}{c|c|c|c|c|c|c|c|c}
+                       1                   & 
+                       2                   &
+                       3                   &
+                       4                   &
+                       5                   &
+        \cellcolor{lightgray}{\fontsize{8}{10}\selectfont \textbf{-}} &
+                       6                   &
+                       7                   &
+                       8                   \\
+    \end{tabular}}                                                    
+    \\ \hline\hline  % Linha que separa as colunas
+
+    \rowcolor{lightgray}
+     Telefone\textit{(cód.de área-n\degree)} & %Telefone
+     Celular\textit{(cód.de área-n\degree)} &  %Celular
+    \multicolumn{2}{l|}{ E-mail} \\            %Email
+    
+    {\CONTelefone} &
+    {\CONCelular} &
+    \multicolumn{2}{l|}{\CONemail}   \\\hline
+\end{tabular}}
+\end{table}
+
+\newpage
 
 %=============== 3 Tabela resumo da execução do cronograma físico do projeto ==============%
 \begin{landscape}
-    \pagestyle{fancy} % Aplica o estilo também na página em paisagem
-    %\fancyhf{} % Limpa cabeçalho e rodapé
+%\newgeometry{left=1cm, right=1cm, top=5cm, bottom=2.5cm} % Margens
+    \thispagestyle{empty}
     \section{Tabela resumo da execução do cronograma físico do projeto\protect\footnote[1]{Veja instruções de preenchimento no final do relatório.}}
     \vspace{-0.8cm} % Espaço opcional entre a subseção e a linha
     \rule{\textwidth}{2pt} % Linha preenchendo a largura do texto e com 2pt de espessura
@@ -660,8 +816,66 @@
     \end{tabular}}
 \end{table}
 
-\end{landscape}
+\begin{table}[h]
+\centering
+\fontsize{12}{10}\selectfont
+\resizebox{\textwidth}{!}{ % Ajusta a tabela para a largura total da página
+\begin{tabular}{|p{2cm}|p{3cm}|p{4cm}|p{3cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
+    \hline
+    \hline
+    \rowcolor{lightgray}
+    \textbf{Item Meta}&
+    \textbf{Metas}&
+    \textbf{Atividades}&
+    \textbf{Indicador \newline Físico}&
+    \multicolumn{2}{c|}{\textbf{Duração Prevista}} &
+    \multicolumn{2}{c|}{\textbf{Duração efetiva}} &
+    \multicolumn{2}{c|}{\textbf{Executado no período}} &
+    \multicolumn{2}{c|}{\parbox[t]{3cm}{\textbf{Acumulado da meta atividade}}}  \\ \cline{5-12}
+    
+    \rowcolor{lightgray}
+    & & & & 
+    \textbf{Mês/Ano inicio} & \textbf{Mês/Ano fim} &
+    \textbf{Mês/Ano inicio} & \textbf{Mês/Ano fim} &
+    \textbf{Previsto (\%)} & \textbf{Realizado (\%)} & \textbf{Previsto (\%)} & \textbf{Realizado (\%)} 
+    \\ \hline
 
+
+    %PREENCHER [1]
+    [1] & 
+    Texto descrevendo a meta física 1 
+    &
+    &
+    & 01/10 
+    & 12/10 
+    & 02/10 
+    & - & 
+    6m/12m = 50\% & 
+    4m/12m = 33\% & 
+    6m/12m = 50\% &
+    4m/12m = 33\% \\
+    \hline
+
+   %PREENCHER [1.1]
+    [1.1] & 
+    Texto descrevendo a meta física 1 
+    &
+    &
+    & 01/10 
+    & 12/10 
+    & 02/10 
+    & - & 
+    6m/12m = 50\% & 
+    4m/12m = 33\% & 
+    6m/12m = 50\% &
+    4m/12m = 33\% \\
+    \hline 
+\end{tabular}}\end{table}
+ 
+
+
+\end{landscape}
+\restoregeometry % Voltar com as margens
 \newpage
 
 %=================== 4.Execução do cronograma físico do projeto ===================%
@@ -694,8 +908,8 @@
 \begin{tabular}{| p{4.05cm} | p{4.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} |}
     \hline
     \rowcolor{lightgray}
-    \multirow{3}{*}{\textbf{Atividade 1.1}} & 
-    \multirow{3}{*}{\textbf{Indicador físico de execução}} & 
+    \multirow{2}{*}{\textbf{Atividade 1.1}} & 
+    \multirow{2}{*}{\textbf{Indicador físico de execução}} & 
     \multicolumn{2}{c|}{\textbf{Executado no período}} &
     \multicolumn{2}{c|}{\parbox[t]{3cm}{\textbf{Acumulado da meta \newline durante o projeto}}}  \\ \cline{3-6}
     
@@ -710,8 +924,8 @@
 \begin{tabular}{| p{4.05cm} | p{4.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} |}
     \hline
     \rowcolor{lightgray}
-    \multirow{3}{*}{\textbf{Atividade 1.1}} & 
-    \multirow{3}{*}{\textbf{Indicador físico de execução}} & 
+    \multirow{2}{*}{\textbf{Atividade 1.1}} & 
+    \multirow{2}{*}{\textbf{Indicador físico de execução}} & 
     \multicolumn{2}{c|}{\textbf{Executado no período}} &
     \multicolumn{2}{c|}{\parbox[t]{3cm}{\textbf{Acumulado da meta \newline durante o projeto}}}  \\ \cline{3-5}
     
@@ -748,16 +962,602 @@
 
 \newpage
 
-\include{5 - Avaliação da gestão do projeto}
-\include{6 - Impactos internos e externos do projeto}
-\include{7 - Produção tecnológica}
-\include{8 - Parceria institucional}
-\include{9- Comentário final}
-\include{10 - Resumo}
-\include{11 - Equipe atual responsável pela execução técnica do projeto}
-\include{12 - Orçamento}
-\include{13 - Instruções adicionais para preenchimento do relatório (1ª parte)}
-\include{14 - Instruções adicionais para preenchimento do relatório (2ª parte)}
+
+%===================5 - Avaliação da gestão do projeto===================%
+\section{Avaliação da gestão do projeto}
+\vspace{-0.8cm} % Espaço opcional entre a linha
+\rule{\textwidth}{2pt} % Linha preenchendo a largura do texto e com 2pt de espessura
+\vspace{-0.9cm} % Subir tabela
+\begin{table}[h]
+    \begin{longtable}{|p{17.4cm}|} % Definindo a largura da coluna
+     \hline
+     \rowcolor{lightgray} 
+     \fontsize{8}{10}\selectfont{Apresente a(s) alteração(ões) na equipe executora (em caso de inclusão ou substituição de algum membro na equipe, deverão ser enviados os comprovantes da formação/titulação, e informados salário e número de horas dedicadas ao projeto\protect\footnote[4]{Toda alteração na equipe executora, pretendida pela proponente, deve ser autorizada previamente pela Finep. Portanto, não basta apresentá-la no relatório, sem que tenha sido analisada e previamente autorizada.}}  
+     \\ \hline \endhead
+     
+     \fontsize{10}{12}\selectfont 
+     
+     
+     TEXTO
+     
+     
+     
+     \\ \hline
+     \end{longtable}
+
+    
+     \begin{longtable}{|p{17.4cm}|} % Definindo a largura da coluna
+     \rowcolor{lightgray} 
+     \fontsize{8}{10}\selectfont{Relacione e associe às atividades do projeto eventual(ais) capacitação(ões) adicional(ais) adquirida(s) ou gerada(s) pela equipe executora, em função do desenvolvimento do projeto.} \\\hline
+     \fontsize{10}{10}\selectfont 
+     
+     
+     TEXTO \\
+ 
+     
+     \hline
+\end{longtable}
+
+\begin{longtable}{|p{17.4cm}|} % Definindo a largura da coluna
+     \rowcolor{lightgray} 
+     \fontsize{8}{10}\selectfont{Mencione eventual(ais) melhoria(s) nas instalações físicas proporcionadas pelo projeto} \\\hline
+     \fontsize{10}{12}\selectfont 
+     
+     
+     TEXTO
+     
+     
+     \\ \hline
+\end{longtable}
+
+\begin{longtable}{|p{17.4cm}|} % Definindo a largura da coluna
+     \rowcolor{lightgray} 
+     \fontsize{10}{10}\selectfont{Relacione eventual(ais) dificuldade(s) não-técnicas do projeto (administrativas, financeiras, etc)\footnote[5]{Este campo não se destina às solicitações de remanejamento financeiro, as quais deverão ser analisadas e autorizadas previamente pela Finep.}} \\\hline
+     \fontsize{10}{12}\selectfont 
+     
+     
+     TEXTO
+     
+     
+     \\ \hline
+\end{longtable}
+\end{table}
+
+
+\newpage
+
+%===================6 - Impactos internos e externos do projeto===================%
+\section{Impactos internos e externos do projeto}
+\vspace{-0.8cm} % Espaço opcional entre a linha
+\rule{\textwidth}{2pt} % Linha preenchendo a largura do texto e com 2pt de espessura
+\vspace{-0.9cm} % Subir tabela
+\begin{table}[h]
+    \begin{longtable}{|p{17.4cm}|} % Definindo a largura da coluna
+     \hline
+     \rowcolor{lightgray} 
+     \fontsize{8}{10}\selectfont{Mencione as perspectivas de desdobramentos que o projeto proporcionou às atividades internas da instituição executora e/ou parceiros, incluindo mudanças organizacionais, de patamar de faturamento, etc.}  
+     \\ \hline \endhead
+     
+     \fontsize{10}{12}\selectfont 
+     
+     
+     TEXTO
+     
+     
+     
+     \\ \hline
+     \end{longtable}
+
+    
+     \begin{longtable}{|p{17.4cm}|} % Definindo a largura da coluna
+     \rowcolor{lightgray} 
+     \fontsize{8}{10}\selectfont{Descreva eventual (is) mudança (s) do posicionamento da empresa perante o mercado, proporcionada (s) pelo projeto} \\\hline
+     \fontsize{10}{10}\selectfont 
+     
+     
+     TEXTO \\
+ 
+     
+     \hline
+\end{longtable}
+
+\begin{longtable}{|p{17.4cm}|} % Definindo a largura da coluna
+     \rowcolor{lightgray} 
+     \fontsize{8}{10}\selectfont{Apresente os benefícios sociais trazidos pelo projeto} \\\hline
+     \fontsize{10}{12}\selectfont 
+     
+     
+     TEXTO
+     
+     
+     \\ \hline
+\end{longtable}
+\end{table}
+\newpage
+
+
+%===================7 - Produção tecnológica===================%
+\section{Avaliação da gestão do projeto}
+\vspace{-0.8cm} % Espaço opcional entre a linha
+\rule{\textwidth}{2pt} % Linha preenchendo a largura do texto e com 2pt de espessura
+\vspace{-0.9cm} % Subir tabela
+\begin{table}[h]
+    \begin{longtable}{|p{17.4cm}|} % Definindo a largura da coluna
+     \hline
+     \rowcolor{lightgray} 
+     \fontsize{8}{10}\selectfont{Apresente o(s) produto(s), protótipo(s), patente(s), processo(s), metodologia(s) que surgiram em meio ao projeto e mostraram inovação e relevância, mas que não haviam sido previstos como indicadores físicos.}  
+     \\ \hline \endhead
+     
+     \fontsize{10}{12}\selectfont 
+     
+     
+     TEXTO
+     
+     
+     
+     \\ \hline
+     \end{longtable}
+     \end{table}
+
+
+
+%===================8 - Parceria institucional===================%
+\section{Parceria institucional}
+\vspace{-0.8cm} % Espaço opcional entre a linha
+\rule{\textwidth}{2pt} % Linha preenchendo a largura do texto e com 2pt de espessura
+\vspace{-0.9cm} % Subir tabela
+\begin{table}[h]
+    \begin{longtable}{|p{17.4cm}|} % Definindo a largura da coluna
+     \hline
+     \rowcolor{lightgray} 
+     \fontsize{8}{10}\selectfont{Descreva a(s) atividade(s) de articulação institucional mantida(s) durante a execução do projeto, relacionando os resultados efetivamente transferidos para instituições de P\&D, empresas, órgãos públicos, instituições não governamentais, assim como a contribuição específica de cada instituição partícipe do Termo de Outorga.}  
+     \\ \hline \endhead
+     
+     \fontsize{10}{12}\selectfont 
+     
+     
+     TEXTO
+     
+     
+     
+     \\ \hline
+     \end{longtable}
+     \end{table}
+
+%===================9- Comentário final===================%
+\section{Comentário Final}
+\vspace{-0.8cm} % Espaço opcional entre a linha
+\rule{\textwidth}{2pt} % Linha preenchendo a largura do texto e com 2pt de espessura
+\vspace{-0.9cm} % Subir tabela
+\begin{table}[h]
+    \begin{longtable}{|p{17.4cm}|} % Definindo a largura da coluna
+     \hline
+     \rowcolor{lightgray} 
+     \fontsize{8}{10}\selectfont{Acrescente observações relevantes, que não se aplicariam aos outros campos do relatório.}  
+     \\ \hline \endhead
+     
+     \fontsize{10}{12}\selectfont 
+     
+     
+     TEXTO
+     
+     
+     
+     \\ \hline
+     \end{longtable}
+     \end{table}
+\newpage
+%===================10 - Resumo===================%
+\section{Resumo.\protect\footnotemark[7]}
+\vspace{-0.8cm} % Espaço opcional entre a linha
+\footnotetext[7]{O preenchimento do resumo é obrigatório, caso se trate de relatório final de projeto.}
+\rule{\textwidth}{2pt} % Linha preenchendo a largura do texto e com 2pt de espessura
+\vspace{-0.9cm} % Subir tabela
+\begin{table}[h]
+
+    \begin{longtable}{|p{17.4cm}|} % Definindo a largura da coluna
+     \hline
+     \rowcolor{lightgray} 
+     \fontsize{8}{10}\selectfont \textbf{Redija um resumo do projeto com até 200 palavras, destacando até seis palavras-chave que melhor caracterizem os resultados, que poderá ser utilizado para divulgação externa.}  
+     \\ \hline \endfirsthead % Cabeçalho da primeira página
+     
+     \fontsize{10}{12}\selectfont 
+     
+     TEXTO
+     
+     \\ \hline
+     \end{longtable}
+
+\end{table}
+\newpage
+%===================11 - Equipe atual responsável pela execução técnica do projeto===================%
+\section{Equipe atual responsável pela execução técnica do projeto\protect\footnote[8]{O preenchimento desta lista não exime a beneficiária proponente de solicitar formal e previamente à Finep qualquer alteração da equipe executora inicialmente aprovada para o projeto.}}
+\vspace{-0.8cm} % Espaço opcional entre a linha
+\rule{\textwidth}{2pt} % Linha preenchendo a largura do texto e com 2pt de espessura
+
+\begin{table}[h]
+\centering
+\resizebox{\textwidth}{!}{ % Ajusta a tabela para a largura total da página
+\fontsize{8}{10}\selectfont
+    \begin{tabular}{|Sc|Sc|Sc|Sc|Sc|}
+        \hline
+        \rowcolor{lightgray}
+        \makecell{Nome completo\\ \textit{(sem abreviações)}} &  
+        \makecell{CPF\\ \textit{(0123456789-01)}} & 
+        \makecell{Período de contratação\\ 
+\textit{(de mm/aaaa até mm/aaaa)}} &
+        \makecell{Fonte dos recursos para \\ pagamento do profissional \\
+        \textit{(Finep ou Contrapartida)}}  &
+        \makecell{Origem do componente \\ 
+        \textit{(Proponente / Executor / } \\
+        \textit{Interveniente)}} \\ \hline
+        
+        & & & & \\ \hline
+        \rowcolor{Gainsboro!60} & & & & \\ \hline
+        & & & & \\ \hline
+        \rowcolor{Gainsboro!60} & & & & \\ \hline
+        & & & & \\ \hline
+            
+        \end{tabular}}
+\end{table}
+
+\newpage
+%===================12 - Orçamento===================%
+\section{Orçamento\protect\footnotemark[9]\protect\footnotemark[10]} 
+\footnotetext[9]{Planilha de preenchimento obrigatório}
+\footnotetext[10]{O preenchimento desta planilha não substitui os outros formulários de prestação de contas}
+\vspace{-0.8cm} % Espaço opcional entre a linha
+    \rule{\textwidth}{2pt} % Linha preenchendo a largura do texto e com 2pt de espessura
+    
+\begin{table}[h]
+\fontsize{10pt}{12pt}\selectfont
+\centering
+\resizebox{\textwidth}{!}{ % Ajusta a tabela para a largura total da página
+\begin{tabular}{|l|l|l|l|l|l|}
+    \hline
+    \rowcolor{lightgray}
+    %-------Cabeçalho-------%
+    \textbf{ITEM} &  
+    \textbf{DESCRIÇÃO} & 
+    \makecell{\textbf{VALORES} \\ \textbf{LIBERADOS} \\ \textbf{PELA FINEP} \\ \textbf{(R\$)}} &
+    \makecell{\textbf{VALORES} \\ \textbf{UTILIZADOS}  \\ \textbf{(R\$)}}  &
+    \makecell{\textbf{SALDO} \\ \textbf{(R\$)}} &
+    \textbf{(\%)} \\
+    \hline
+
+    %-------Corpo da tabela-------%
+    \rowcolor{blue!40} 
+    \textbf{12.1} & 
+    \textbf{DESPESAS CORRENTES} & 
+    \textbf{0,00} & 
+    \textbf{0,00} & 
+    \textbf{0,00} & 
+    \textbf{0,00} \\ 
+    
+    \rowcolor{Gainsboro!60} 
+    12.1.1 & 
+    Vencimento e vantagens & 
+    ADD & 
+    ADD & 
+    \textbf{0,00} & 
+    \textbf{0,00} \\ 
+    
+    12.1.2 & 
+    Encargos & 
+    ADD & 
+    ADD &
+    \textbf{0,00} &
+    \textbf{0,00} \\ 
+    
+    \rowcolor{Gainsboro!60} 
+    12.1.3 & 
+    Diárias(Pessoal Civil/Militar) & 
+    ADD & 
+    ADD & 
+    \textbf{0,00} &
+    \textbf{0,00} \\ 
+
+    12.1.4 & 
+    Material de Consumo & 
+    ADD & 
+    ADD &
+    \textbf{0,00} &
+    \textbf{0,00} \\ 
+
+    \rowcolor{Gainsboro!60} 
+    12.1.5 & 
+    Passagens e Despesas c/Locomoção & 
+    ADD & 
+    ADD & 
+    \textbf{0,00} &
+    \textbf{0,00} \\    
+
+    12.1.6 & 
+    Serviços de consultoria & 
+    ADD & 
+    ADD &
+    \textbf{0,00} &
+    \textbf{0,00} \\ 
+
+    \rowcolor{Gainsboro!60} 
+    12.1.7 & 
+    Outros Serviços de Terceiros P. Física & 
+    ADD & 
+    ADD & 
+    \textbf{0,00} &
+    \textbf{0,00} \\ \hline 
+
+    \textcolor{blue}{12.1.8} &
+    \textcolor{blue}{Outros Serviços de Terceiros P. Física} & 
+    \textcolor{blue}{ADD} & 
+    \textcolor{blue}{ADD} &  
+    \textcolor{blue}{\textbf{0,00}} &
+    \textcolor{blue}{\textbf{0,00}} \\  
+
+    \rowcolor{Gainsboro!60} 
+    12.1.8.1 & 
+    Despesas Acessórios c/Importação & 
+    ADD & 
+    ADD & 
+    \textbf{0,00} &
+    \textbf{0,00} \\ 
+
+    12.1.8.2 & 
+    Outras Despesas & 
+    ADD & 
+    ADD &
+    \textbf{0,00} &
+    \textbf{0,00} \\ \hline
+    
+    \rowcolor{blue!40} \textbf{12.2} & 
+    \textbf{DESPESAS DE CAPITAL} & 
+    \textbf{0,00} & 
+    \textbf{0,00} & 
+    \textbf{0,00} & 
+    \textbf{0,00} \\ \hline
+
+    \rowcolor{Gainsboro!60} 
+    \textcolor{blue}{12.2.1} &
+    \textcolor{blue}{Obras e Instalações} & 
+    \textcolor{blue}{ADD} & 
+    \textcolor{blue}{ADD} &  
+    \textcolor{blue}{\textbf{0,00}} &
+    \textcolor{blue}{\textbf{0,00}} \\  
+
+    12.2.1.1 & 
+    Obras & 
+    ADD & 
+    ADD &
+    \textbf{0,00} &
+    \textbf{0,00} \\ 
+
+    \rowcolor{Gainsboro!60}
+    12.2.1.2 & 
+    Instalações & 
+    ADD & 
+    ADD &
+    \textbf{0,00} &
+    \textbf{0,00} \\ \hline
+
+    \textcolor{blue}{12.2.2} &
+    \textcolor{blue}{Equipamento e Material Permanente} & 
+    \textcolor{blue}{ADD} & 
+    \textcolor{blue}{ADD} &  
+    \textcolor{blue}{\textbf{0,00}} &
+    \textcolor{blue}{\textbf{0,00}} \\  
+
+    12.2.2.1 & 
+    Equipamento Nacional & 
+    ADD & 
+    ADD &
+    \textbf{0,00} &
+    \textbf{0,00} \\ 
+       
+    \rowcolor{Gainsboro!60}
+    12.2.2.2 & 
+    Equipamento Importado & 
+    ADD & 
+    ADD &
+    \textbf{0,00} &
+    \textbf{0,00} \\ 
+
+    12.2.2.3 & 
+    Material Permanente Nacional & 
+    ADD & 
+    ADD &
+    \textbf{0,00} &
+    \textbf{0,00} \\ 
+
+    \rowcolor{Gainsboro!60}
+    12.2.2.4 & 
+    Material Permanente Importado & 
+    ADD & 
+    ADD &
+    \textbf{0,00} &
+    \textbf{0,00} \\ \hline
+
+    \rowcolor{blue!40} \textbf{12.3} & 
+    \textbf{TOTAIS} & 
+    \textbf{0,00} & 
+    \textbf{0,00} & 
+    \textbf{0,00} & 
+    \textbf{0,00} \\ \hline\hline
+
+    \rowcolor{blue!40} \textbf{12.4} & 
+    \textbf{APLICAÇÕES FINANCEIRAS} & 
+    \multicolumn{3}{|l||}{\textbf{0,00}} & 
+    \textbf{0,00} \\ \hline
+    
+\end{tabular}}
+\end{table}
+
+
+\vspace{1cm}
+
+\centering
+[LOCAL,DATA]
+
+\vspace{1cm}
+\underline{\hspace{10cm}} \\[1em] % Linha de assinatura 
+[Nome completo do coordenador do projeto] [Título/cargo na instituição]
+\newpage
+
+%===================13 - Instruções adicionais para preenchimento do relatório (1ª parte)===================%
+\section{Instruções adicionais para preenchimento do relatório (1ª parte)}
+\vspace{-0.8cm} % Espaço opcional entre a linha
+    \rule{\textwidth}{2pt} % Linha preenchendo a largura do texto e com 2pt de espessura
+
+\raggedright Instrução de preenchimento da tabela resumo e da execução do cronograma físico do projeto
+
+Exemplo de cronograma de projeto
+\\[0.5cm] % Espaço entre as tabelas
+\textbf{ADD IMAGEM CRONOGRAMA}
+\\[0.5cm] % Espaço entre as tabelas
+Preenchimento da tabela resumo (item 3), baseado no exemplo de cronograma de projeto
+\\[0.5cm] % Espaço entre as tabelas
+Relatório do 1º período
+
+\begin{table}[h]
+\centering
+\fontsize{12}{10}\selectfont
+\resizebox{\textwidth}{!}{ % Ajusta a tabela para a largura total da página
+\begin{tabular}{|p{2cm}|p{3cm}|p{4cm}|p{3cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
+    \hline
+    \hline
+    \rowcolor{lightgray}
+    \textbf{Item Meta}&
+    \textbf{Metas}&
+    \textbf{Atividades}&
+    \textbf{Indicador \newline Físico}&
+    \multicolumn{2}{c|}{\textbf{Duração Prevista}} &
+    \multicolumn{2}{c|}{\textbf{Duração efetiva}} &
+    \multicolumn{2}{c|}{\textbf{Executado no período}} &
+    \multicolumn{2}{c|}{\parbox[t]{3cm}{\textbf{Acumulado da meta atividade}}}  \\ \cline{5-12}
+    
+    \rowcolor{lightgray}
+    & & & & 
+    \textbf{Mês/Ano inicio} & \textbf{Mês/Ano fim} &
+    \textbf{Mês/Ano inicio} & \textbf{Mês/Ano fim} &
+    \textbf{Previsto (\%)} & \textbf{Realizado (\%)} & \textbf{Previsto (\%)} & \textbf{Realizado (\%)} 
+    \\ \hline
+
+
+    %PREENCHER [1]
+    [1] & 
+    Texto descrevendo a meta física 1 
+    &
+    &
+    & 01/10 
+    & 12/10 
+    & 02/10 
+    & - & 
+    6m/12m = 50\% & 
+    4m/12m = 33\% & 
+    6m/12m = 50\% &
+    4m/12m = 33\% \\
+    \hline
+
+   %PREENCHER [1.1]
+    [1.1] & 
+    Texto descrevendo a meta física 1 
+    &
+    &
+    & 01/10 
+    & 12/10 
+    & 02/10 
+    & - & 
+    6m/12m = 50\% & 
+    4m/12m = 33\% & 
+    6m/12m = 50\% &
+    4m/12m = 33\% \\
+    \hline 
+\end{tabular}}\end{table}
+ 
+
+Relatório do 1° período. 
+% META FÍSICA 1
+\begin{table}[h]
+\fontsize{8}{10}\selectfont
+\centering
+\resizebox{\textwidth}{!}{ % Ajusta a tabela para a largura total da página
+\begin{tabular}{| p{9cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} |}
+    \hline
+    \rowcolor{lightgray}
+    \multirow{2}{*}{\textbf{Meta física 1}}&
+    \multicolumn{2}{c|}{\textbf{Executado no período}} &
+    \multicolumn{2}{c|}{\parbox[t]{3cm}{\textbf{Acumulado da meta \newline durante o projeto}}}  \\ \cline{2-5}
+    
+    \rowcolor{lightgray}
+    & \textbf{Previsto (\%)} & \textbf{Realizado (\%)} & \textbf{Previsto (\%)} & \textbf{Realizado (\%)} \\ \hline
+
+    [Texto descrevendo a meta física] & 50 & 33 & 50 & 33 \\ \hline
+
+\end{tabular}}
+\\[0.5cm] % Espaço entre as tabelas
+
+
+% ATIVIDADE 1.1
+% Ajusta a tabela para a largura total da página 
+
+\resizebox{\textwidth}{!}{
+\begin{tabular}{| p{4.05cm} | p{4.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} |}
+    \hline
+    \rowcolor{lightgray}
+    \multirow{2}{*}{\textbf{Atividade 1.1}} & 
+    \multirow{2}{*}{\textbf{Indicador físico de execução}} & 
+    \multicolumn{2}{c|}{\textbf{Executado no período}} &
+    \multicolumn{2}{c|}{\parbox[t]{3cm}{\textbf{Acumulado da meta \newline durante o projeto}}}  \\ \cline{3-6}
+    
+    \rowcolor{lightgray}
+    & & \textbf{Previsto (\%)} & \textbf{Realizado (\%)} & \textbf{Previsto (\%)} & \textbf{Realizado (\%)} \\ \hline
+
+    [Texto descrevendo a atividade] & [Texto descrevendo o indicador físico] & 75 & 50 & 75 & 50 \\ \hline
+\end{tabular}}
+\\[0.5cm] % Espaço entre as tabelas
+
+% ATIVIDADE 1.2
+\resizebox{\textwidth}{!}{ % Ajusta a tabela para a largura total da página
+\begin{tabular}{| p{4.05cm} | p{4.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} |}
+    \hline
+    \rowcolor{lightgray}
+    \multirow{2}{*}{\textbf{Atividade 1.1}} & 
+    \multirow{2}{*}{\textbf{Indicador físico de execução}} & 
+    \multicolumn{2}{c|}{\textbf{Executado no período}} &
+    \multicolumn{2}{c|}{\parbox[t]{3cm}{\textbf{Acumulado da meta \newline durante o projeto}}}  \\ \cline{3-6}
+    
+    \rowcolor{lightgray}
+    & & \textbf{Previsto (\%)} & \textbf{Realizado (\%)} & \textbf{Previsto (\%)} & \textbf{Realizado (\%)} \\ \hline
+
+    [Texto descrevendo a atividade] & [Texto descrevendo o indicador físico] & 75 & 50 & 75 & 50 \\ \hline
+\end{tabular}}
+\end{table}
+\newpage
+
+%===================14 - Instruções adicionais para preenchimento do relatório (2ª parte)===================%
+\section{Instruções adicionais para preenchimento do relatório (2ª parte)}
+\vspace{-0.8cm} % Espaço opcional entre a linha
+    \rule{\textwidth}{2pt} % Linha preenchendo a largura do texto e com 2pt de espessura
+    
+% Definindo o estilo da caixa retangular
+\begin{mdframed}[linecolor=black,linewidth=1pt,backgroundcolor=gray!40]
+
+\begin{enumerate}[label=14.\arabic*.,leftmargin=1cm]
+\fontsize{10}{10}\selectfont
+    \item O relatório deve sempre começar por um \textbf{Sumário}, para que seja facilitada a consulta de seus itens.
+    \item Nenhuma das partes deste modelo de relatório deve ser suprimida pela beneficiária proponente. Quando, por qualquer razão, não houver necessidade de preenchimento de determinado item (exceto o de número 2, \textit{Informações opcionais e subitens}), o campo, com a expressão \textit{``Deixado propositalmente em branco''}, deve ser colocado.
+    \item Em regra, os campos descritivos deste modelo de relatório não têm um número máximo de caracteres e, portanto, devem estender-se tanto quanto necessário. Principalmente, os campos com a descrição do desenvolvimento das atividades, que fazem parte do item \textbf{Execução do Cronograma Físico do Projeto} (item 2 do relatório). Uma das exceções sobre o limite de tamanho é o campo \textbf{Resumo}, que deve ter no máximo 200 palavras.
+    \item O preenchimento da tabela resumo da execução do cronograma físico do projeto deve informar a situação atual do projeto, descrevendo as metas e atividades aprovadas, assim como as previstas e executadas no período e acumuladas.
+    \item Em relação às informações sobre a \textbf{Execução do Cronograma Físico}, cada atividade de cada meta física deve ser mencionada no relatório, mesmo aquelas não iniciadas. Quando se tratar de atividade não iniciada, o campo \textbf{Execução (\%)} deverá ser preenchido com 0\% e, se a atividade estiver atrasada em relação à previsão inicial, a justificativa pelo atraso deverá ser necessariamente apresentada no campo correspondente. Caso a atividade tenha sido iniciada, mas não finalizada, o campo \textbf{Execução} deverá ser preenchido com percentual correspondente ao estágio de desenvolvimento até aquele momento.
+    \item As informações sobre a execução das atividades do \textbf{Cronograma Físico}, e respectivos anexos contendo indicadores físicos, devem ser incrementais. Ou seja, mesmo que uma determinada atividade já tenha sido concluída (\textbf{``Execução'' 100\%}), as páginas com estes indicadores devem constar dos relatórios seguintes, de maneira que o relatório final contenha toda a história do projeto desde o início de sua execução.
+    \item Sempre que houver um \textbf{indicador físico do projeto} concluído, a comprovação de sua execução, seja ela descritiva, gráfica, fotográfica ou por qualquer outro documento demonstrativo cabível, deverá constar em anexo ao relatório. Também deverá ser anexado ao relatório o indicador físico ligado ao estágio de execução justifique a apresentação.
+    \item Sempre que indicado, e quando o estágio em que se encontra o projeto justificar, deverão ser anexados ao corpo de um dos anexos ao relatório: plantas industriais e de engenharia; figuras; gráficos; diagramas de circuito; protótipos; provas de conceito; resultados de análises laboratoriais; manuais de operação; fotografias de partes e peças mecânicas; listas de pessoal; listas de assinaturas; estudos de viabilidade; relatórios de impacto ambiental; e qualquer outro documento ou artefato que comprove a execução das atividades pactuadas.
+    \item O preenchimento da planilha com as informações sobre o \textbf{orçamento do projeto} é obrigatório.
+    \item A planilha com as informações sobre os valores empregados no projeto deve reﬂetir a situação atual do projeto.
+    \item Todas as páginas do relatório e dos anexos devem receber \textbf{rubricas do coordenador do projeto}, exceto feita à última página do relatório, que deve conter a \textbf{assinatura do coordenador}.
+    \item Finalmente, é importante lembrar que este relatório deverá ser enviado à \textbf{Finep} pela beneficiária proponente exclusivamente por meio digital, encaminhando ao endereço eletrônico \texttt{cp\_protocolo@finep.gov.br}, com cópia por e-mail para os analistas operacionais responsáveis pelo acompanhamento do projeto.
+\end{enumerate}
+\end{mdframed}
+\newpage
 
 %=================== 15.ANEXO A –[preencher com o texto descrevendo o indicador físico da atividade 1.1]===================%
 \section{ANEXO A – \color{blue}{[preencher com o texto descrevendo o indicador físico da atividade 1.1]}}
