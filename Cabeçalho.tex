@@ -1,0 +1,136 @@
+%===================Cabeçalho===================%
+% Configuração do cabeçalho
+\renewcommand{\thepage}{} % Remove a numeração de todas as páginas
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt} % Remove a linha do cabeçalho
+
+% Cabeçalho à esquerda + imagem opaca
+\fancyhead[L]{\vspace{-1.5cm}\hspace{-1cm}
+\begin{tikzpicture}
+    \node[opacity=0.5] {\includegraphics[width=0.18\linewidth]{Imagens/Cabeçalho_img/Logo_cabeca.jpg}};
+\end{tikzpicture}}
+
+
+% Cabeçalho à direita com tabela e texto opacos
+\fancyhead[R]{
+ \color[gray]{0.3} % Define opacidade do texto (30% cinza)
+ \begin{tabular}{|p{7.28cm}||p{3.59cm}|p{2cm}} % Tabela personalizada
+    \multicolumn{2}{l}{\textbf{Relatório técnico de projetos}}   &
+    \fontsize{8}{9}\selectfont \data \\  
+        \hline\hline % Linha horizontal que ocupa toda a largura
+    
+    \rowcolor{lightgray}
+    \fontsize{8}{10}\selectfont \textbf{N° do Termo de Outorga} \textit{(01.23.4567.89)}  & 
+    \fontsize{8}{10}\selectfont \textbf{Referência Finep} \textit{1234/56}  
+    \\
+    
+    \begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c|c@{\hspace{0.52cm}} c|c|c|c|c|c|c|c|} % Gambiarra
+        \fontsize{8}{10}\selectfont 0 & 
+        \fontsize{8}{10}\selectfont 1 & 
+        \cellcolor{lightgray}{\fontsize{8}{10}\selectfont \textbf{.}} & 
+        \fontsize{8}{10}\selectfont 2 & 
+        \fontsize{8}{10}\selectfont 3 & 
+        \cellcolor{lightgray}{\fontsize{8}{10}\selectfont \textbf{.}} & 
+        \fontsize{8}{10}\selectfont 4 & 
+        \fontsize{8}{10}\selectfont 5 & 
+        \fontsize{8}{10}\selectfont 6 & 
+        \fontsize{8}{10}\selectfont 7 & 
+        \cellcolor{lightgray}{\fontsize{8}{10}\selectfont \textbf{.}} & 
+        \fontsize{8}{10}\selectfont 8 & 
+        \fontsize{8}{10}\selectfont 9 & 
+        \fontsize{8}{10}\selectfont 1 & 
+        \fontsize{8}{10}\selectfont 2 & 
+        \fontsize{8}{10}\selectfont 3 & 
+        \fontsize{8}{10}\selectfont 4 & 
+        \cellcolor{lightgray}{\fontsize{8}{10}\selectfont \textbf{/}} & 
+        \fontsize{8}{10}\selectfont 5 & 
+        \fontsize{8}{10}\selectfont 6 
+        
+    \end{tabular} 
+    \\\hline\hline % Linha que separa as colunas
+    
+    \rowcolor{lightgray}
+    \fontsize{8}{10}\selectfont \textbf{Beneficiária Proponente}  &
+    \fontsize{8}{10}\selectfont  \textbf{Período} \textit{(mm/aa até mm/aa)} \\ 
+    \fontsize{8}{10}\selectfont   \BeneficiariaProponente     &                              
+    \fontsize{8}{10}\selectfont    \Periodo  
+    \\ \hline\hline % Linha que separa as colunas
+    \rowcolor{lightgray}
+    \multicolumn{2}{|l|} {\fontsize{8}{10}\selectfont \textbf{Título do projeto}} \\
+    \multicolumn{2}{|l|} {\fontsize{8}{10}\selectfont  \Titulodoprojeto} &
+    \fontsize{8}{9}\selectfont Pág. \thepage /21 % Número da página à direita 
+    \\ \hline % Linha que separa as colunas
+
+\end{tabular}} 
+
+
+%%%-----------------MODELO NOVO-RUIM--------------%%%
+% Configuração do cabeçalho
+\renewcommand{\thepage}{} % Remove a numeração de todas as páginas
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt} % Remove a linha do cabeçalho
+
+% Cabeçalho à esquerda + imagem opaca
+\fancyhead[L]{\vspace{-1.5cm}\hspace{-1cm}
+\begin{tikzpicture}
+    \node[opacity=0.5] {\includegraphics[width=0.18\linewidth]{Imagens/Cabeçalho_img/Logo_cabeca.jpg}};
+\end{tikzpicture}}
+
+
+% Cabeçalho à direita com tabela e texto opacos
+\fancyhead[R]{
+ \color[gray]{0.3} % Define opacidade do texto (30% cinza)
+ \begin{tabular}{|p{7.28cm}||p{3.59cm}|p{2cm}}  % Tabela personalizada
+    \multicolumn{2}{l}{\textbf{Relatório técnico de projetos}}   &
+    \fontsize{8}{9}\selectfont \data \\  
+        \hline% Linha horizontal que ocupa toda a largura
+         \end{tabular} 
+         
+    \begin{tabular}{|p{7.28cm}||p{3.59cm}|} % Tabela personalizada
+        \rowcolor{lightgray}
+        \fontsize{8}{10}\selectfont \textbf{N° do Termo de Outorga} \textit{(01.23.4567.89)}  & 
+        \fontsize{8}{10}\selectfont \textbf{Referência Finep} \textit{1234/56}  
+        \\
+    
+    \begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c|c@{\hspace{0.52cm}} c|c|c|c|c|c|c|c|} % Gambiarra
+        \fontsize{8}{10}\selectfont 0 & 
+        \fontsize{8}{10}\selectfont 1 & 
+        \cellcolor{lightgray}{\fontsize{8}{10}\selectfont \textbf{.}} & 
+        \fontsize{8}{10}\selectfont 2 & 
+        \fontsize{8}{10}\selectfont 3 & 
+        \cellcolor{lightgray}{\fontsize{8}{10}\selectfont \textbf{.}} & 
+        \fontsize{8}{10}\selectfont 4 & 
+        \fontsize{8}{10}\selectfont 5 & 
+        \fontsize{8}{10}\selectfont 6 & 
+        \fontsize{8}{10}\selectfont 7 & 
+        \cellcolor{lightgray}{\fontsize{8}{10}\selectfont \textbf{.}} & 
+        \fontsize{8}{10}\selectfont 8 & 
+        \fontsize{8}{10}\selectfont 9 & 
+        \fontsize{8}{10}\selectfont 1 & 
+        \fontsize{8}{10}\selectfont 2 & 
+        \fontsize{8}{10}\selectfont 3 & 
+        \fontsize{8}{10}\selectfont 4 & 
+        \cellcolor{lightgray}{\fontsize{8}{10}\selectfont \textbf{/}} & 
+        \fontsize{8}{10}\selectfont 5 & 
+        \fontsize{8}{10}\selectfont 6 
+        
+    
+    \end{tabular} 
+    \\\hline\hline % Linha que separa as colunas
+    
+    \rowcolor{lightgray}
+    \fontsize{8}{10}\selectfont \textbf{Beneficiária Proponente}  &
+    \fontsize{8}{10}\selectfont  \textbf{Período} \textit{(mm/aa até mm/aa)} \\ 
+    \fontsize{8}{10}\selectfont   \BeneficiariaProponente     &                              
+    \fontsize{8}{10}\selectfont    \Periodo  
+    \\ \hline\hline % Linha que separa as colunas
+    
+    \begin{tabular}{|p{7.28cm}||p{3.59cm}|p{2cm}} 
+        \rowcolor{lightgray}
+        \multicolumn{2}{|l|} {\fontsize{8}{10}\selectfont \textbf{Título do projeto}} \\
+    
+        \multicolumn{2}{|l|} {\fontsize{8}{10}\selectfont  \Titulodoprojeto} &
+        \fontsize{8}{9}\selectfont Pág. \thepage /21 % Número da página à direita 
+        \\ \hline % Linha que separa as colunas
+    \end{tabular} 
+\end{tabular}} 

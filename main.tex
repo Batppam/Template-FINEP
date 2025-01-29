@@ -1,0 +1,788 @@
+\documentclass[a4paper,12pt]{article}
+
+%===================Packages===================%
+%\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel} % Idioma
+\usepackage{fontspec}   % Necessário para fontes no XeLaTeX ou LuaLaTeX
+\setmainfont{Arial}     % Define a fonte principal como Arial
+\usepackage{changes}
+\usepackage{fancyhdr}   % Para cabeçalhos personalizados
+\usepackage{xcolor}     % Para trabalhar com cores e opacidade
+\usepackage{colortbl}   % Para tabelas coloridas
+\usepackage{tabularray} % Tabela com mais recursos
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{transparent}% Para aplicar opacidade a imagens
+\usepackage{graphicx}   % Imagens
+%\usepackage{geometry}  % Definir margens
+\usepackage{mdframed} % Pacote para criar caixas retangulares
+\usepackage{gensymb}
+\usepackage[a4paper, headsep=2cm, left=1.5cm, right=1.6cm, top=3cm, bottom=4cm]{geometry}
+\usepackage{tikz}       % Desenho da borda
+\usepackage{array}      % Para ajustar colunas nas tabelas
+\usepackage{multirow}   % Para mesclar células na direção vertical
+\usepackage[table]{xcolor} % Cores nas tabelas
+%\usepackage{everypage} % Para executar comandos no início de cada página
+\usepackage{comment}
+\usepackage{pdflscape}  % Permite configurar páginas em formato paisagem
+%\usepackage{lscape}
+\usepackage[table, svgnames, dvipsnames]{xcolor}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{makecell, cellspace, caption}
+\setlength\cellspacetoplimit{3pt}
+\setlength\cellspacebottomlimit{3pt}
+\usepackage{multirow}
+\usepackage{fancybox}
+\usepackage{enumitem}   % Para controle avançado de listas
+\usepackage{lipsum}     % Texto de exemplo
+
+\renewcommand{\arraystretch}{1.2} % Aumenta o espaçamento entre as linhas da tabela
+%===================Command===================%
+%Cabeçalho
+\newcommand{\BeneficiariaProponente}{ADD}
+\newcommand{\Periodo}{(mm/aa até mm/aa)}
+\newcommand{\Titulodoprojeto}{ADD}
+\newcommand{\data}{12/01/25}
+%-----------------Informações Gerais-----------------%
+% 1.1 Beneficiário Proponente
+\newcommand{\Razaosocial}{ADD}
+\newcommand{\Endereco}{ADD}
+\newcommand{\Bairro}{ADD}
+\newcommand{\Municipio}{ADD}
+%\newcommand{\UF}{ADD}  MUDAR NO TABELA
+%\newcommand{\CEP}{ADD} MUDAR NA TABELA
+\newcommand{\Telefone}{()}
+\newcommand{\Celular}{()}
+\newcommand{\email}{ADD}
+
+% 1.2 Projeto
+\newcommand{\Titulo}{ADD}
+\newcommand{\ObjetivoGeral}{ADD}
+\newcommand{\DuracaoPrevista}{ADD}
+\newcommand{\ValorTotalFinep}{ADD}
+\newcommand{\ValorDesembolsado}{ADD}
+
+% 1.3 Coordenação
+\newcommand{\Coordenador}{ADD Coordenador}
+\newcommand{\CoordenadorEndereco}{Coordenador  END}
+\newcommand{\CoordenadorBairro}{Coordenador BA} 
+\newcommand{\CoordenadorMunicipio}{Coordenador MUN}
+%\newcommand{\UF}{ADD}  MUDAR NO TABELA
+%\newcommand{\CEP}{ADD} MUDAR NA TABELA
+\newcommand{\CoordenadorTelefone}{()Coordenador te}
+\newcommand{\CoordenadorCelular}{()Coordenador CE}
+\newcommand{\Coordenadoremail}{Coordenador EMAIL}
+
+%===================Informações adicionais===================%
+% 2.1 Co-executor (caso exista)
+\newcommand{\CORazaosocial}{ADD 2}
+\newcommand{\COEndereco}{ADD 2}
+\newcommand{\COBairro}{ADD 2}
+\newcommand{\COMunicipio}{ADD 2}
+%\newcommand{\UF}{ADD}  MUDAR NO TABELA
+%\newcommand{\CEP}{ADD} MUDAR NA TABELA
+\newcommand{\COTelefone}{() 2}
+\newcommand{\COCelular}{() 2}
+\newcommand{\COemail}{ADD 2}
+
+% 2.1 Co-executor N (caso exista)
+\newcommand{\CONRazaosocial}{ADD 2}
+\newcommand{\CONEndereco}{ADD 2}
+\newcommand{\CONBairro}{ADD 2}
+\newcommand{\CONMunicipio}{ADD 2}
+%\newcommand{\UF}{ADD}  MUDAR NO TABELA
+%\newcommand{\CEP}{ADD} MUDAR NA TABELA
+\newcommand{\CONTelefone}{() 2}
+\newcommand{\CONCelular}{() 2}
+\newcommand{\CONemail}{ADD 2}
+
+%===================Capa===================%
+%\thisfancypage{\setlength{\fboxsep}{15pt}\doublebox}{}
+%    \fancypagestyle{firstpage}{
+%    \fancyhf{} % Sem cabeçalho e rodapé
+%    \renewcommand{\headrulewidth}{0pt}
+%    \renewcommand{\footrulewidth}{0pt}
+
+   
+% Desenhar borda diretamente na página
+    %\AtBeginShipoutFirst{%
+     %   \begin{tikzpicture}[remember picture, overlay]
+       %     \draw[line width=0.5pt] 
+        %        ([xshift=-2.5cm, yshift=-2.5cm]current page.south west) 
+         %       rectangle 
+          %      ([xshift=2.5cm, yshift=2.5cm]current page.north east);
+        %\end{tikzpicture}
+
+
+%------------------------------------------------------------------------------%
+%\setlength{\headheight}{20pt}% Aumenta a altura do cabeçalho
+\setlength{\headsep}{85 pt} % Espaçamento entre o cabeçalho e o texto
+% Linhas horizontais no cabeçalho
+
+%===================Rodapé===================%
+%\fancyfoot[L]{TESTE}
+\fancyfoot[R]{\fontsize{8}{9}\selectfont Versão 1.8.2}
+%\fancyfoot[C]{TESTE}
+%===================Cabeçalho===================%
+% Configuração do cabeçalho
+%\renewcommand{\thepage}{} % Remove a numeração de todas as páginas
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt} % Remove a linha do cabeçalho
+
+% Cabeçalho à esquerda + imagem opaca
+\fancyhead[L]{\vspace{-2.0cm}\hspace{-0.5cm}
+\begin{tikzpicture}
+    \node[opacity=0.5] {\includegraphics[width=0.18\linewidth]{Imagens/Cabeçalho_img/Logo_cabeca.jpg}};
+\end{tikzpicture}}
+
+
+% Cabeçalho à direita com tabela e texto opacos
+
+ \fancyhead[R]{
+    \color[gray]{0.3} % Define opacidade do texto (30% cinza)
+    \fontsize{8}{10}\selectfont % Aplica o tamanho de fonte para toda a tabela
+    \begin{tabular}{|p{7.28cm}||p{3.59cm}|p{2cm}} % Tabela personalizada
+        \multicolumn{2}{l}{\textbf{Relatório técnico de projetos}}   &
+        \fontsize{8}{9}\selectfont \data \\  
+        \hline\cline{1-2} % Linha horizontal que ocupa toda a largura
+    
+        \rowcolor{lightgray}
+        \textbf{N° do Termo de Outorga} \textit{(01.23.4567.89)}  & 
+        \textbf{Referência Finep} \textit{1234/56}  
+        \\
+    
+        \begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c|c@{\hspace{0.51cm}} c|c|c|c|c|c|c|c|} % Gambiarra
+            0 & 
+            1 & 
+            \cellcolor{lightgray}{\textbf{.}} & 
+            2 & 
+            3 & 
+            \cellcolor{lightgray}{\textbf{.}} & 
+            4 & 
+            5 & 
+            6 & 
+            7 & 
+            \cellcolor{lightgray}{\textbf{.}} & 
+            8 & 
+            9 & 
+            1 & 
+            2 & 
+            3 & 
+            4 & 
+            \cellcolor{lightgray}{\textbf{/}} & 
+            5 & 
+            6
+        \end{tabular} 
+        \\\cline{1-2} % Linha que separa as colunas
+    
+        \rowcolor{lightgray}
+        \textbf{Beneficiária Proponente}  &
+        \textbf{Período} \textit{(mm/aa até mm/aa)} \\ 
+        \BeneficiariaProponente     &                              
+        \Periodo  
+        \\ \cline{1-2} % Linha que separa as colunas
+        \rowcolor{lightgray}
+        \multicolumn{2}{|l|} {\textbf{Título do projeto}} \\
+        \multicolumn{2}{|l|} {\textbf{ \Titulodoprojeto}} &
+        Pág. \thepage /21 % Número da página à direita 
+        \\ \hline % Linha que separa as colunas
+    \end{tabular}
+}
+
+%-------------------------------------Inicio Documento---------------------------------------%
+
+\begin{document}
+
+% Primeira página CAPA com borda
+	
+    \thispagestyle{empty}
+    \newgeometry{top=1cm, bottom=2cm, left=1cm, right=2cm}  % Margens para a capa
+\thisfancypage{\setlength{\fboxsep}{15pt}\doublebox}{}
+
+% Adicionar espaço antes da imagem para movê-la para baixo
+\vspace*{8cm} 
+
+% Centralizar a imagem
+\noindent
+\makebox[\textwidth]{%
+    \includegraphics[width=0.8\linewidth]{Imagens//Capa_img/Logo_capa.jpg}
+}
+
+% Adicionar espaço (se necessário) após a imagem
+\vspace{5cm}
+
+\begin{center}
+    \Large\textbf{RELATÓRIO TÉCNICO DE PROJETOS \\ DE SUBVENÇÃO ECONÔMICA À INOVAÇÃO}
+\end{center}
+
+\vspace{1cm}
+
+\textbf{Termo de Outorga, Nº:} \\
+
+\textbf{Beneficiária Proponente:} \\
+
+\textbf{Período de execução deste relatório \fontsize{8}{10}\selectfont(mm/aa a mm/aa):}
+
+\restoregeometry % Voltar com as margens
+\newpage  
+
+\tableofcontents  % Sumário
+
+	
+\newpage
+	
+% Páginas seguintes sem borda
+%Informações Gerais
+\section{Informações gerais}
+\vspace{-0.8cm} % Espaço opcional entre a subseção e a linha
+\noindent % Remove o recuo no início da linha
+\rule{\textwidth}{2pt} % Linha preenchendo a largura do texto e com 2pt de espessura
+
+
+%---------------1.1 Beneficiária Proponente---------------%
+    
+\subsection{Beneficiária Proponente}
+\vspace{-1cm} % Subir tabela
+%\begin{tabular}{|p{6.5cm}||p{2cm}||p{6cm}|} % Adiciona linhas verticais entre as colunas
+\begin{table}[h]
+\resizebox{\textwidth}{!}{ % Ajusta a tabela para a largura total da página
+\fontsize{8}{10}\selectfont
+\begin{tabular}{|p{4.25cm}||p{4.25cm}||p{0.5cm}||p{6cm}|} 
+    \multicolumn{3}{l}{\textbf{}}    \\  
+    \hline\hline % Linha horizontal que ocupa toda a largura
+    \rowcolor{lightgray}
+    \multicolumn{3}{|l||}{ Razão social}  & 
+    CNPJ \textit{(0123456789/0001-22)}  \\
+
+     \multicolumn{3}{|l||}{\fontsize{8}{10}\selectfont \Razaosocial}  & 
+\setlength{\tabcolsep}{2.5pt} % Reduz o espaço entre colunas
+
+\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c} 
+         0 & 
+         1 &  
+         2 & 
+         3 &  
+         4 & 
+         5 & 
+         6 & 
+         7 &  
+         8 & 
+         9 & 
+        \cellcolor{lightgray}{ \textbf{/}} & 
+         0 & 
+         0 & 
+         0 & 
+         1 &
+        \cellcolor{lightgray}{ \textbf{-}} &
+         2 &
+         2  
+        \end{tabular}
+      \\\hline\hline   % Linha que separa as colunas
+    \rowcolor{lightgray}
+    \multicolumn{3}{|l||}{ {Endereço \textit{(logradouro;n\degree;complemento)}}}  &
+     {Bairro} \\ 
+    
+   \multicolumn{3}{|l||}{ 
+   \Endereco}     &                                
+   \Bairro 
+    \\ \hline\hline % Linha que separa as colunas
+    
+    \rowcolor{lightgray}
+    \multicolumn{2}{|l||}{{ Município}}    &
+     UF &
+     CEP \textit{(12345-678)} \\
+    
+    \multicolumn{2}{|l||}{\Municipio}    &
+    
+    {%\UF
+    \setlength{\tabcolsep}{1.5pt}
+    \begin{tabular}{c|c}
+                       U                   & 
+                       F
+    \end{tabular}}                                                    &
+    
+    {%\CEP
+    \setlength{\tabcolsep}{7.5pt}
+    \begin{tabular}{c|c|c|c|c|c|c|c|c}
+                       1                   & 
+                       2                   &
+                       3                   &
+                       4                   &
+                       5                   &
+        \cellcolor{lightgray}{ \textbf{-}} &
+                       6                   &
+                       7                   &
+                       8                   \\
+    \end{tabular}}                                                    
+    \\ \hline\hline  % Linha que separa as colunas
+
+    \rowcolor{lightgray}
+     Telefone\textit{(cód.de área-n\degree)} &
+     Celular\textit{(cód.de área-n\degree)} &
+    \multicolumn{2}{l|}{ E-mail} \\
+    
+    {\Telefone} &
+    {\Celular} &
+    \multicolumn{2}{l|}{\email}   \\\hline
+\end{tabular}}
+\end{table}
+
+    %---------------1.2 PROJETO---------------%
+\subsection{Projeto}
+\vspace{-1cm} % Subir tabela
+\begin{table}[h]
+\resizebox{\textwidth}{!}{ % Ajusta a tabela para a largura total da página
+\fontsize{8}{10}\selectfont
+\begin{tabular}{|p{4cm}||p{4cm}||p{3cm}||p{4cm}|} 
+    \multicolumn{4}{l}{\textbf{}}    \\ \hline\hline % Linha horizontal que ocupa toda a largura
+    \rowcolor{lightgray}
+    \multicolumn{4}{|l|}{ Título}   \\
+    \multicolumn{4}{|l|}{ \Titulo}   \\ \hline\hline
+
+    \rowcolor{lightgray}
+    \multicolumn{4}{|l|}{ Objetivo Geral} \\
+    \multicolumn{4}{|l|}{ \ObjetivoGeral}  \\ \hline\hline
+
+    \rowcolor{lightgray}
+     Data de Assinatura (dd/mm/aa) &
+     Duração prevista(meses)       &
+     Valor Total-Finep(R\$)        &
+     Valor desembolsado-Finep(R\$) \\
+
+    \setlength{\tabcolsep}{5.3pt}
+    \begin{tabular}{c|c|c|c|c|c|c|c}
+
+%---------------MUDAR DATA-----------------%
+                      2                    & 
+                      0                    &
+        \cellcolor{lightgray}{\textbf{/}}  & 
+                      1                    &
+                      2                    &
+        \cellcolor{lightgray}{\textbf{/}} & 
+                      2                    &
+                      5                    
+    \end{tabular} &
+    
+     \DuracaoPrevista              &
+     \ValorTotalFinep              &
+     \ValorDesembolsado         \\\hline
+\end{tabular}}
+\end{table}
+
+%---------------1.3 Coordenação---------------%
+\subsection{Coordenação}
+\vspace{-1.2cm} % Subir tabela
+%\begin{tabular}{|p{6.5cm}||p{2cm}||p{6cm}|} % Adiciona linhas verticais entre as colunas
+\begin{table}[h]
+\resizebox{\textwidth}{!}{ % Ajusta a tabela para a largura total da página
+\fontsize{8}{10}\selectfont
+\begin{tabular}{|p{4.25cm}||p{4.25cm}||p{0.5cm}||p{6cm}|} 
+    \multicolumn{3}{l}{\textbf{}}    \\  
+    \hline\hline % Linha horizontal que ocupa toda a largura
+    \rowcolor{lightgray}
+    \multicolumn{3}{|l||}{Coordenador \textit{(nome completo sem abreviações)}}  & 
+     CNPJ \textit{(0123456789/0001-22)}  \\
+
+     \multicolumn{3}{|l||}{\Coordenador}  & 
+\setlength{\tabcolsep}{2.5pt} % Reduz o espaço entre colunas
+\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c} 
+         0 & 
+         1 &  
+         2 & 
+         3 &  
+         4 & 
+         5 & 
+         6 & 
+         7 &  
+         8 & 
+         9 & 
+        \cellcolor{lightgray}{ \textbf{/}} & 
+         0 & 
+         0 & 
+         0 & 
+         1 &   
+        \cellcolor{lightgray}{ \textbf{-}} &
+         2 &
+         2  
+        \end{tabular}
+      \\\hline\hline   % Linha que separa as colunas
+    \rowcolor{lightgray}
+    \multicolumn{3}{|l||}{ {Endereço \textit{(logradouro;n\degree;complemento)}}}  &
+    {Bairro} \\ 
+    
+   \multicolumn{3}{|l||}{  \CoordenadorEndereco}     &                              
+       \CoordenadorBairro 
+    \\ \hline\hline % Linha que separa as colunas
+    
+    \rowcolor{lightgray}
+    \multicolumn{2}{|l||}{{ Município}}    &
+     UF &
+     CEP \textit{(12345-678)} \\
+    
+    \multicolumn{2}{|l||}{  \CoordenadorMunicipio}    &
+    
+    {%\UF
+    \setlength{\tabcolsep}{1.5pt}
+    \begin{tabular}{c|c}
+                       U                   & 
+                       F
+    \end{tabular}}                                                    &
+    
+    {%\CEP
+    \setlength{\tabcolsep}{7.5pt}
+    \begin{tabular}{c|c|c|c|c|c|c|c|c}
+                       1                   & 
+                       2                   &
+                       3                   &
+                       4                   &
+                       5                   &
+        \cellcolor{lightgray}{ \textbf{-}} &
+                       6                   &
+                       7                   &
+                       8                   \\
+    \end{tabular}}                                                    
+    \\ \hline\hline  % Linha que separa as colunas
+
+    \rowcolor{lightgray}
+    \fontsize{8}{10}\selectfont Telefone\textit{(cód.de área-n\degree)} &
+    \fontsize{8}{10}\selectfont Celular\textit{(cód.de área-n\degree)} &
+    \multicolumn{2}{l|}{\fontsize{8}{10}\selectfont E-mail} \\
+    
+    {\fontsize{8}{10}\selectfont  \CoordenadorTelefone} &
+    {\fontsize{8}{10}\selectfont  \CoordenadorCelular} &
+    \multicolumn{2}{l|}{\fontsize{8}{10}\selectfont  \Coordenadoremail}   \\\hline
+\end{tabular}}
+\end{table}
+
+%-------------Informações Adicionais-------------%
+\newpage
+
+\section{Informações adicionais}
+\vspace{-0.8cm} % Espaço opcional entre a subseção e a linha
+\noindent % Remove o recuo no início da linha
+\rule{\textwidth}{2pt} % Linha preenchendo a largura do texto e com 2pt de espessura
+
+
+\subsection{Co-executor (caso exista)}
+\vspace{-0.7cm} % Subir tabela
+%\begin{tabular}{|p{6.5cm}||p{2cm}||p{6cm}|} % Adiciona linhas verticais entre as colunas
+\begin{table}[h]
+\resizebox{\textwidth}{!}{ % Ajusta a tabela para a largura total da página
+\fontsize{8}{10}\selectfont
+\begin{tabular}{|p{4.25cm}||p{4.25cm}||p{0.5cm}||p{6cm}|} 
+    \multicolumn{3}{l}{\textbf{}}    \\  
+    \hline\hline % Linha horizontal que ocupa toda a largura
+    \rowcolor{lightgray}
+    \multicolumn{3}{|l||}{ Razão Social}  & 
+                            CNPJ \textit{(0123456789/0001-22)}  \\
+
+     \multicolumn{3}{|l||}{\fontsize{8}{10}\selectfont \Razaosocial2}  & 
+\setlength{\tabcolsep}{2.599pt} % Reduz o espaço entre colunas
+\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c} 
+         0 & 
+         1 &  
+         2 & 
+         3 &  
+         4 & 
+         5 & 
+         6 & 
+         7 &  
+         8 & 
+         9 & 
+        \cellcolor{lightgray}{\textbf{/}} & 
+         0 & 
+         0 & 
+         0 & 
+         1 &
+        \cellcolor{lightgray}{\textbf{-}} &
+         2 &
+         2  
+        \end{tabular}
+      \\\hline\hline   % Linha que separa as colunas
+    \rowcolor{lightgray}
+    \multicolumn{3}{|l||}{{Endereço \textit{(logradouro;n\degree;complemento)}}}  &
+     {Bairro} \\ 
+
+       \multicolumn{3}{|l||}{   \COEndereco}     &                              
+       \COBairro 
+    \\ \hline\hline % Linha que separa as colunas
+    
+    \rowcolor{lightgray}
+    \multicolumn{2}{|l||}{{\ Município}}    &
+     UF &
+     CEP \textit{(12345-678)} \\
+    
+    \multicolumn{2}{|l||}{  \COMunicipio}  &
+    
+    {%===================\UF===================
+    \setlength{\tabcolsep}{1.5pt}
+    \begin{tabular}{c|c}
+                       U                   & 
+                       F
+    \end{tabular}}                         &
+    
+    {%===================\CEP===================
+    \setlength{\tabcolsep}{7.5pt}
+    \begin{tabular}{c|c|c|c|c|c|c|c|c}
+                       1                   & 
+                       2                   &
+                       3                   &
+                       4                   &
+                       5                   &
+        \cellcolor{lightgray}{ \textbf{-}} &
+                       6                   &
+                       7                   &
+                       8                   \\
+    \end{tabular}}                                                    
+    \\ \hline\hline  % Linha que separa as colunas
+
+    \rowcolor{lightgray}
+     Telefone\textit{(cód.de área-n\degree)} &
+     Celular\textit{(cód.de área-n\degree)} &
+    \multicolumn{2}{l|}{ E-mail} \\
+    
+    {  \COTelefone} &
+    {  \COCelular} &
+    \multicolumn{2}{l|}{  \COemail}   \\\hline
+\end{tabular}}
+\end{table}
+%---------------------------Co-executor N -------------------------%
+
+\subsection{Co-executor N (caso exista)}
+\vspace{-0.7cm} % Subir tabela
+\begin{table}[h]  
+\resizebox{\textwidth}{!}{ % Ajusta a tabela para a largura total da página
+\fontsize{8}{10}\selectfont
+\begin{tabular}{|p{4.25cm}||p{4.25cm}||p{0.5cm}||p{6cm}|} 
+    \multicolumn{3}{l}{\textbf{}}    \\  
+    \hline\hline % Linha horizontal que ocupa toda a largura
+    \rowcolor{lightgray}
+    \multicolumn{3}{|l||}{ Razão Social}     & 
+    \fontsize{8}{10}\selectfont CNPJ \textit{(0123456789/0001-22)}  \\
+
+     \multicolumn{3}{|l||}{ \CONRazaosocial} & 
+\setlength{\tabcolsep}{2.5pt} % Reduz o espaço entre colunas
+\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c} 
+         0 & 
+         1 &  
+         2 & 
+         3 &  
+         4 & 
+         5 & 
+         6 & 
+         7 &  
+         8 & 
+         9 & 
+        \cellcolor{lightgray}{\textbf{/}} & 
+         0 & 
+         0 & 
+         0 & 
+         1 &
+        \cellcolor{lightgray}{\textbf{-}} &
+         2 &
+         2  
+        \end{tabular}
+      \\\hline\hline   % Linha que separa as colunas
+    \rowcolor{lightgray}
+    \multicolumn{3}{|l||}{{Endereço \textit{(logradouro;n\degree;complemento)}}}  &   {Bairro} \\ 
+    
+   \multicolumn{3}{|l||}{\CONEndereco}     &        \CONBairro 
+    \\ \hline\hline % Linha que separa as colunas
+    
+    \rowcolor{lightgray}
+    \multicolumn{2}{|l||}{{Município}}       &
+    UF &
+    CEP \textit{(12345-678)} \\
+    
+    \multicolumn{2}{|l||}{\CONMunicipio}    &
+    
+    {%\UF
+    \setlength{\tabcolsep}{1.5pt}
+    \begin{tabular}{c|c}
+                       U                   & 
+                       F
+    \end{tabular}}                        &
+    
+    {%\CEP
+    \setlength{\tabcolsep}{7.5pt}
+    \begin{tabular}{c|c|c|c|c|c|c|c|c}
+                       1                   & 
+                       2                   &
+                       3                   &
+                       4                   &
+                       5                   &
+        \cellcolor{lightgray}{\fontsize{8}{10}\selectfont \textbf{-}} &
+                       6                   &
+                       7                   &
+                       8                   \\
+    \end{tabular}}                                                    
+    \\ \hline\hline  % Linha que separa as colunas
+
+    \rowcolor{lightgray}
+     Telefone\textit{(cód.de área-n\degree)} & %Telefone
+     Celular\textit{(cód.de área-n\degree)} &  %Celular
+    \multicolumn{2}{l|}{ E-mail} \\            %Email
+    
+    {\CONTelefone} &
+    {\CONCelular} &
+    \multicolumn{2}{l|}{\CONemail}   \\\hline
+\end{tabular}}
+\end{table}
+\newpage
+
+%=============== 3 Tabela resumo da execução do cronograma físico do projeto ==============%
+\begin{landscape}
+    \pagestyle{fancy} % Aplica o estilo também na página em paisagem
+    %\fancyhf{} % Limpa cabeçalho e rodapé
+    \section{Tabela resumo da execução do cronograma físico do projeto\protect\footnote[1]{Veja instruções de preenchimento no final do relatório.}}
+    \vspace{-0.8cm} % Espaço opcional entre a subseção e a linha
+    \rule{\textwidth}{2pt} % Linha preenchendo a largura do texto e com 2pt de espessura
+
+  \begin{table}[h]
+    \fontsize{8}{10}\selectfont
+    \centering
+    \resizebox{\textwidth}{!}{ % Ajusta a tabela para a largura total da página
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+        \hline
+        \rowcolor{lightgray}
+        \multicolumn{2}{|c|}{\textbf{Duração prevista para o projeto}} & 
+        \multicolumn{2}{c|}{\textbf{Duração efetiva do projeto}} & 
+        \multicolumn{2}{c|}{\textbf{Percentual do projeto executado no período}} & 
+        \multicolumn{2}{c|}{\textbf{Percentual acumulado do projeto}} \\ \hline
+        
+        \rowcolor{lightgray}
+        \textbf{Mês/Ano Início} & \textbf{Mês/Ano Fim} & 
+        \textbf{Mês/Ano Início} & \textbf{Mês/Ano Fim} & 
+        \textbf{Previsto (\%)} & \textbf{Realizado (\%)} & 
+        \textbf{Previsto (\%)} & \textbf{Realizado (\%)} \\ \hline
+        
+        início & fim & início & fim & (\%) & (\%) & (\%) & (\%) \\ \hline
+    \end{tabular}}
+\end{table}
+
+\end{landscape}
+
+\newpage
+
+%=================== 4.Execução do cronograma físico do projeto ===================%
+
+\section{Execução do cronograma físico do projeto\protect\footnote[2]{Veja instruções de preenchimento no final do relatório.}.}
+\vspace{-0.8cm} % Espaço opcional entre a subseção e a linha
+    \rule{\textwidth}{2pt} % Linha preenchendo a largura do texto e com 2pt de espessura
+\subsection{Metas físicas\protect\footnote[3]{Todas as metas e atividades associadas que constam do cronograma físico, aprovado pela Finep para o projeto, devem ser mencionadas no relatório de acompanhamento técnico.}.}
+%\vspace{-0.7cm} % Subir tabela
+
+% META FÍSICA 1
+\begin{table}[h]
+\fontsize{8}{10}\selectfont
+\centering
+\begin{tabular}{| p{9cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} |}
+    \hline
+    \rowcolor{lightgray}
+    \multirow{3}{*}{\textbf{Meta física 1}}&
+    \multicolumn{2}{c|}{\textbf{Executado no período}} &
+    \multicolumn{2}{c|}{\parbox[t]{3cm}{\textbf{Acumulado da meta \newline durante o projeto}}}  \\ \cline{2-5}
+    
+    \rowcolor{lightgray}
+    & \textbf{Previsto (\%)} & \textbf{Realizado (\%)} & \textbf{Previsto (\%)} & \textbf{Realizado (\%)} \\ \hline
+
+    [Texto descrevendo a meta física] & 50 & 33 & 50 & 33 \\ \hline
+\end{tabular}
+\\[0.5cm] % Espaço entre as tabelas
+
+% ATIVIDADE 1.1
+\begin{tabular}{| p{4.05cm} | p{4.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} |}
+    \hline
+    \rowcolor{lightgray}
+    \multirow{3}{*}{\textbf{Atividade 1.1}} & 
+    \multirow{3}{*}{\textbf{Indicador físico de execução}} & 
+    \multicolumn{2}{c|}{\textbf{Executado no período}} &
+    \multicolumn{2}{c|}{\parbox[t]{3cm}{\textbf{Acumulado da meta \newline durante o projeto}}}  \\ \cline{3-6}
+    
+    \rowcolor{lightgray}
+    & & \textbf{Previsto (\%)} & \textbf{Realizado (\%)} & \textbf{Previsto (\%)} & \textbf{Realizado (\%)} \\ \hline
+
+    [Texto descrevendo a atividade] & [Texto descrevendo o indicador físico] & 75 & 50 & 75 & 50 \\ \hline
+\end{tabular}
+\\[0.5cm] % Espaço entre as tabelas
+
+% ATIVIDADE 1.2
+\begin{tabular}{| p{4.05cm} | p{4.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} |}
+    \hline
+    \rowcolor{lightgray}
+    \multirow{3}{*}{\textbf{Atividade 1.1}} & 
+    \multirow{3}{*}{\textbf{Indicador físico de execução}} & 
+    \multicolumn{2}{c|}{\textbf{Executado no período}} &
+    \multicolumn{2}{c|}{\parbox[t]{3cm}{\textbf{Acumulado da meta \newline durante o projeto}}}  \\ \cline{3-5}
+    
+    \rowcolor{lightgray}
+    & & \textbf{Previsto (\%)} & \textbf{Realizado (\%)} & \textbf{Previsto (\%)} & \textbf{Realizado (\%)} \\ \hline
+
+    [Texto descrevendo a atividade] & [Texto descrevendo o indicador físico] & 75 & 50 & 75 & 50 \\ \hline %MUDAR VALORES
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\begin{longtable}{|p{0.94\textwidth}|} % Ajuste a largura para 90% da largura da página
+    \hline
+    \rowcolor{lightgray} 
+    \fontsize{8}{10}\selectfont Descreva o desenvolvimento da atividade \\ \hline 
+    \endhead
+    
+    \fontsize{10}{12}\selectfont 
+    TEXTO \\ \hline
+    
+    \rowcolor{lightgray} 
+    \fontsize{8}{10}\selectfont Comente sobre o(s) resultado(s) \textit{(em caso de tarefa concluída, o indicador físico deverá constar como anexo no relatório)} \\
+    \hline
+    {\fontsize{10}{12}\selectfont TEXTO} \\ \hline
+    
+    \rowcolor{lightgray} 
+    \fontsize{8}{10}\selectfont Justifique o eventual atraso ou adiantamento da execução da tarefa, em relação à previsão inicial \\
+    \hline
+    {\fontsize{10}{12}\selectfont TEXTO} \\ \hline
+\end{longtable}
+\end{table}
+
+
+
+\newpage
+
+\include{5 - Avaliação da gestão do projeto}
+\include{6 - Impactos internos e externos do projeto}
+\include{7 - Produção tecnológica}
+\include{8 - Parceria institucional}
+\include{9- Comentário final}
+\include{10 - Resumo}
+\include{11 - Equipe atual responsável pela execução técnica do projeto}
+\include{12 - Orçamento}
+\include{13 - Instruções adicionais para preenchimento do relatório (1ª parte)}
+\include{14 - Instruções adicionais para preenchimento do relatório (2ª parte)}
+
+%=================== 15.ANEXO A –[preencher com o texto descrevendo o indicador físico da atividade 1.1]===================%
+\section{ANEXO A – \color{blue}{[preencher com o texto descrevendo o indicador físico da atividade 1.1]}}
+\vspace{-0.8cm} % Espaço opcional entre a linha
+    \rule{\textwidth}{2pt} % Linha preenchendo a largura do texto e com 2pt de espessura
+    
+\newpage
+
+%=================== 16.ANEXO B –[preencher com o texto descrevendo o indicador físico da atividade 1.n]===================%
+\section{ANEXO B – \color{blue}{[preencher com o texto descrevendo o indicador físico da atividade 1.n]}}
+\vspace{-0.8cm} % Espaço opcional entre a linha
+    \rule{\textwidth}{2pt} % Linha preenchendo a largura do texto e com 2pt de espessura
+
+\newpage
+
+%=================== 17.ANEXO C –[preencher com o texto descrevendo o indicador físico da atividade 1.n]===================%
+\section{ANEXO C – \color{blue}{[preencher com o texto descrevendo o indicador físico da atividade N.1]}}
+\vspace{-0.8cm} % Espaço opcional entre a linha
+    \rule{\textwidth}{2pt} % Linha preenchendo a largura do texto e com 2pt de espessura
+
+\newpage
+
+%=================== 18.ANEXO D –[preencher com o texto descrevendo o indicador físico da atividade N.n]===================%
+\section{ANEXO D – \color{blue}{[preencher com o texto descrevendo o indicador físico da atividade N.n]}}
+\vspace{-0.8cm} % Espaço opcional entre a linha
+    \rule{\textwidth}{2pt} % Linha preenchendo a largura do texto e com 2pt de espessura
+
+\end{document}
