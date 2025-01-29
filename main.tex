@@ -6,7 +6,7 @@
 \usepackage{fontspec}   % Necessário para fontes no XeLaTeX ou LuaLaTeX
 \setmainfont{Arial}     % Define a fonte principal como Arial
 \usepackage{changes}
-\usepackage{hyperref}   % Links para sumario
+\usepackage[hidelinks]{hyperref}   % Links para sumario
 \usepackage{fancyhdr}   % Para cabeçalhos personalizados
 \usepackage{xcolor}     % Para trabalhar com cores e opacidade
 \usepackage{colortbl}   % Para tabelas coloridas
@@ -134,7 +134,6 @@
 \begin{document}
 
 % Primeira página CAPA com borda
-	
     \thispagestyle{empty}
     \newgeometry{top=1cm, bottom=2cm, left=1cm, right=2cm}  % Margens para a capa
 \thisfancypage{\setlength{\fboxsep}{15pt}\doublebox}{}
@@ -815,7 +814,11 @@
 \begin{landscape}
 %\newgeometry{left=1cm, right=1cm, top=5cm, bottom=2.5cm} % Margens
     \thispagestyle{empty}
-    \section{Tabela resumo da execução do cronograma físico do projeto\protect\footnote[1]{Veja instruções de preenchimento no final do relatório.}}
+
+\section
+[\texorpdfstring{Tabela resumo da execução do cronograma físico do projeto}{Tabela resumo da execução do cronograma físico do projeto}]
+{Tabela resumo da execução do cronograma físico do projeto\protect\footnote{Veja instruções de preenchimento no final do relatório.}}
+    
     \vspace{-0.8cm} % Espaço opcional entre a subseção e a linha
     \rule{\textwidth}{2pt} % Linha preenchendo a largura do texto e com 2pt de espessura
 
@@ -903,11 +906,17 @@
 
 %=================== 4.Execução do cronograma físico do projeto ===================%
 
-\section{Execução do cronograma físico do projeto\protect\footnote[2]{Veja instruções de preenchimento no final do relatório.}.}
+\section
+[\texorpdfstring{Execução do cronograma físico do projeto}{Execução do cronograma físico do projeto}]
+{Execução do cronograma físico do projeto\protect\footnote{Veja instruções de preenchimento no final do relatório.}}
+
+
+
 \vspace{-0.8cm} % Espaço opcional entre a subseção e a linha
     \rule{\textwidth}{2pt} % Linha preenchendo a largura do texto e com 2pt de espessura
-\subsection{Metas físicas\protect\footnote[3]{Todas as metas e atividades associadas que constam do cronograma físico, aprovado pela Finep para o projeto, devem ser mencionadas no relatório de acompanhamento técnico.}.}
-%\vspace{-0.7cm} % Subir tabela
+\subsection
+[\texorpdfstring{Metas físicas}{Metas físicas}]
+{Metas físicas\protect\footnote{Todas as metas e atividades associadas que constam do cronograma físico, aprovado pela Finep para o projeto, devem ser mencionadas no relatório de acompanhamento técnico.}}
 
 % META FÍSICA 1
 \begin{table}[h]
@@ -981,8 +990,6 @@
 \end{longtable}
 \end{table}
 
-
-
 \newpage
 
 
@@ -995,7 +1002,11 @@
     \begin{longtable}{|p{17.4cm}|} % Definindo a largura da coluna
      \hline
      \rowcolor{lightgray} 
-     \fontsize{8}{10}\selectfont{Apresente a(s) alteração(ões) na equipe executora (em caso de inclusão ou substituição de algum membro na equipe, deverão ser enviados os comprovantes da formação/titulação, e informados salário e número de horas dedicadas ao projeto\protect\footnote[4]{Toda alteração na equipe executora, pretendida pela proponente, deve ser autorizada previamente pela Finep. Portanto, não basta apresentá-la no relatório, sem que tenha sido analisada e previamente autorizada.}}  
+     \fontsize{8}{10}\selectfont{Apresente a(s) alteração(ões) na equipe executora (em caso de inclusão ou substituição de algum membro na equipe, deverão ser enviados os comprovantes da formação/titulação, e informados salário e número de horas dedicadas ao projeto\protect\footnote{Toda alteração na equipe executora, pretendida pela proponente, deve ser autorizada previamente pela Finep. Portanto, não basta apresentá-la no relatório, sem que tenha sido analisada e previamente autorizada.}} 
+
+
+
+     
      \\ \hline \endhead
      
      \fontsize{10}{12}\selectfont 
@@ -1035,7 +1046,7 @@
 
 \begin{longtable}{|p{17.4cm}|} % Definindo a largura da coluna
      \rowcolor{lightgray} 
-     \fontsize{8}{10}\selectfont{Relacione eventual(ais) dificuldade(s) não-técnicas do projeto (administrativas, financeiras, etc)\footnote[5]{Este campo não se destina às solicitações de remanejamento financeiro, as quais deverão ser analisadas e autorizadas previamente pela Finep.}} \\\hline
+     \fontsize{8}{10}\selectfont{Relacione eventual(ais) dificuldade(s) não-técnicas do projeto (administrativas, financeiras, etc)\footnote{Este campo não se destina às solicitações de remanejamento financeiro, as quais deverão ser analisadas e autorizadas previamente pela Finep.}} \\\hline
      \fontsize{10}{12}\selectfont 
      
      
@@ -1171,9 +1182,10 @@
      \end{table}
 \newpage
 %===================10 - Resumo===================%
-\section{Resumo.\protect\footnotemark[7]}
+\section
+[\texorpdfstring{Resumo}{Resumo}]
+{Resumo\protect\footnote{O preenchimento do resumo é obrigatório, caso se trate de relatório final de projeto.}}
 \vspace{-0.8cm} % Espaço opcional entre a linha
-\footnotetext[7]{O preenchimento do resumo é obrigatório, caso se trate de relatório final de projeto.}
 \rule{\textwidth}{2pt} % Linha preenchendo a largura do texto e com 2pt de espessura
 \vspace{-0.9cm} % Subir tabela
 \begin{table}[h]
@@ -1194,7 +1206,13 @@
 \end{table}
 \newpage
 %===================11 - Equipe atual responsável pela execução técnica do projeto===================%
-\section{Equipe atual responsável pela execução técnica do projeto\protect\footnote[8]{O preenchimento desta lista não exime a beneficiária proponente de solicitar formal e previamente à Finep qualquer alteração da equipe executora inicialmente aprovada para o projeto.}}
+
+\section
+[\texorpdfstring{Equipe atual responsável pela execução técnica do projeto}{Equipe atual responsável pela execução técnica do projeto}]
+{Equipe atual responsável pela execução técnica do projeto\protect\footnote{O preenchimento desta lista não exime a beneficiária proponente de solicitar formal e previamente à Finep qualquer alteração da equipe executora inicialmente aprovada para o projeto.}}
+
+
+
 \vspace{-0.8cm} % Espaço opcional entre a linha
 \rule{\textwidth}{2pt} % Linha preenchendo a largura do texto e com 2pt de espessura
 
@@ -1226,9 +1244,10 @@
 
 \newpage
 %===================12 - Orçamento===================%
-\section{Orçamento\protect\footnotemark[9]\protect\footnotemark[10]} 
-\footnotetext[9]{Planilha de preenchimento obrigatório}
-\footnotetext[10]{O preenchimento desta planilha não substitui os outros formulários de prestação de contas}
+
+\section[\texorpdfstring{Orçamento}{Orçamento}]
+{Orçamento\protect\footnote{Planilha de preenchimento obrigatório}\protect\footnote{O preenchimento desta planilha não substitui os outros formulários de prestação de contas}}
+
 \vspace{-0.8cm} % Espaço opcional entre a linha
     \rule{\textwidth}{2pt} % Linha preenchendo a largura do texto e com 2pt de espessura
     
@@ -1583,28 +1602,29 @@ Relatório do 1° período.
 \newpage
 
 %=================== 15.ANEXO A –[preencher com o texto descrevendo o indicador físico da atividade 1.1]===================%
-\section{ANEXO A – \color{blue}{[preencher com o texto descrevendo o indicador físico da atividade 1.1]}}
+\section[\texorpdfstring{ANEXO A – [preencher com o texto descrevendo o indicador físico da atividade 1.1]}{ANEXO A – [preencher com o texto descrevendo o indicador físico da atividade 1.1]}]{ANEXO A – \color{blue}{[preencher com o texto descrevendo o indicador físico da atividade 1.1]}}
+
 \vspace{-0.8cm} % Espaço opcional entre a linha
     \rule{\textwidth}{2pt} % Linha preenchendo a largura do texto e com 2pt de espessura
     
 \newpage
 
 %=================== 16.ANEXO B –[preencher com o texto descrevendo o indicador físico da atividade 1.n]===================%
-\section{ANEXO B – \color{blue}{[preencher com o texto descrevendo o indicador físico da atividade 1.n]}}
+\section[\texorpdfstring{ANEXO B – [preencher com o texto descrevendo o indicador físico da atividade 1.n]}{ANEXO B – [preencher com o texto descrevendo o indicador físico da atividade 1.n]}]{ANEXO B – \color{blue}{[preencher com o texto descrevendo o indicador físico da atividade 1.n]}}
 \vspace{-0.8cm} % Espaço opcional entre a linha
     \rule{\textwidth}{2pt} % Linha preenchendo a largura do texto e com 2pt de espessura
 
 \newpage
 
 %=================== 17.ANEXO C –[preencher com o texto descrevendo o indicador físico da atividade 1.n]===================%
-\section{ANEXO C – \color{blue}{[preencher com o texto descrevendo o indicador físico da atividade N.1]}}
+\section[\texorpdfstring{ANEXO C – [preencher com o texto descrevendo o indicador físico da atividade 1.n]}{ANEXO C – [preencher com o texto descrevendo o indicador físico da atividade 1.n]}]{ANEXO C – \color{blue}{[preencher com o texto descrevendo o indicador físico da atividade 1.n]}}
 \vspace{-0.8cm} % Espaço opcional entre a linha
     \rule{\textwidth}{2pt} % Linha preenchendo a largura do texto e com 2pt de espessura
 
 \newpage
 
 %=================== 18.ANEXO D –[preencher com o texto descrevendo o indicador físico da atividade N.n]===================%
-\section{ANEXO D – \color{blue}{[preencher com o texto descrevendo o indicador físico da atividade N.n]}}
+\section[\texorpdfstring{ANEXO D – [preencher com o texto descrevendo o indicador físico da atividade N.n]}{ANEXO D – [preencher com o texto descrevendo o indicador físico da atividade N.n]}]{ANEXO D – \color{blue}{[preencher com o texto descrevendo o indicador físico da atividade N.n]}}
 \vspace{-0.8cm} % Espaço opcional entre a linha
     \rule{\textwidth}{2pt} % Linha preenchendo a largura do texto e com 2pt de espessura
 
