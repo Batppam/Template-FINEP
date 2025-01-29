@@ -35,7 +35,6 @@
 \usepackage{multirow}
 \usepackage{fancybox}
 \usepackage{enumitem}   % Para controle avançado de listas
-\usepackage{lipsum}     % Texto de exemplo
 
 \renewcommand{\arraystretch}{1.2} % Aumenta o espaçamento entre as linhas da tabela
 %===================Command===================%
@@ -129,6 +128,53 @@
 %\fancyfoot[L]{TESTE}
 \fancyfoot[R]{\fontsize{8}{9}\selectfont Versão 1.8.2}
 %\fancyfoot[C]{TESTE}
+
+%-------------------------------------Inicio Documento---------------------------------------%
+
+\begin{document}
+
+% Primeira página CAPA com borda
+	
+    \thispagestyle{empty}
+    \newgeometry{top=1cm, bottom=2cm, left=1cm, right=2cm}  % Margens para a capa
+\thisfancypage{\setlength{\fboxsep}{15pt}\doublebox}{}
+
+% Adicionar espaço antes da imagem para movê-la para baixo
+\vspace*{8cm} 
+
+% Centralizar a imagem
+\noindent
+\makebox[\textwidth]{%
+    \includegraphics[width=0.8\linewidth]{Imagens//Capa_img/Logo_capa.jpg}
+}
+
+% Adicionar espaço (se necessário) após a imagem
+\vspace{5cm}
+
+\begin{center}
+    \Large\textbf{RELATÓRIO TÉCNICO DE PROJETOS \\ DE SUBVENÇÃO ECONÔMICA À INOVAÇÃO}
+\end{center}
+
+\vspace{1cm}
+
+\textbf{Termo de Outorga, Nº:} \\
+
+\textbf{Beneficiária Proponente:} \\
+
+\textbf{Período de execução deste relatório \fontsize{8}{10}\selectfont(mm/aa a mm/aa):}
+
+%\restoregeometry % Voltar com as margens
+\newpage  
+
+
+\newgeometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm} % Margens
+     
+\tableofcontents  % Sumário
+
+\restoregeometry
+
+\newpage
+
 %===================Cabeçalho===================%
 % Configuração do cabeçalho
 %\renewcommand{\thepage}{} % Remove a numeração de todas as páginas
@@ -195,51 +241,7 @@
     \end{tabular}
 }
 
-%-------------------------------------Inicio Documento---------------------------------------%
 
-\begin{document}
-
-% Primeira página CAPA com borda
-	
-    \thispagestyle{empty}
-    \newgeometry{top=1cm, bottom=2cm, left=1cm, right=2cm}  % Margens para a capa
-\thisfancypage{\setlength{\fboxsep}{15pt}\doublebox}{}
-
-% Adicionar espaço antes da imagem para movê-la para baixo
-\vspace*{8cm} 
-
-% Centralizar a imagem
-\noindent
-\makebox[\textwidth]{%
-    \includegraphics[width=0.8\linewidth]{Imagens//Capa_img/Logo_capa.jpg}
-}
-
-% Adicionar espaço (se necessário) após a imagem
-\vspace{5cm}
-
-\begin{center}
-    \Large\textbf{RELATÓRIO TÉCNICO DE PROJETOS \\ DE SUBVENÇÃO ECONÔMICA À INOVAÇÃO}
-\end{center}
-
-\vspace{1cm}
-
-\textbf{Termo de Outorga, Nº:} \\
-
-\textbf{Beneficiária Proponente:} \\
-
-\textbf{Período de execução deste relatório \fontsize{8}{10}\selectfont(mm/aa a mm/aa):}
-
-%\restoregeometry % Voltar com as margens
-\newpage  
-\thispagestyle{empty}
-
-\newgeometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm} % Margens
-     
-    \tableofcontents  % Sumário
-
-\restoregeometry	
-\newpage
-	
 % Páginas seguintes sem borda
 %Informações Gerais
 \section{Informações gerais}
@@ -820,8 +822,7 @@
   \begin{table}[h]
     \fontsize{8}{10}\selectfont
     \centering
-    \resizebox{\textwidth}{!}{ % Ajusta a tabela para a largura total da página
-    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+    \begin{tabular}{|p{2.30cm}|p{2.35cm}|p{2.35cm}|p{2.35cm}|p{3.35cm}|p{3.35cm}|p{3.35cm}|p{3.35cm}|}
         \hline
         \rowcolor{lightgray}
         \multicolumn{2}{|c|}{\textbf{Duração prevista para o projeto}} & 
@@ -836,14 +837,14 @@
         \textbf{Previsto (\%)} & \textbf{Realizado (\%)} \\ \hline
         
         início & fim & início & fim & (\%) & (\%) & (\%) & (\%) \\ \hline
-    \end{tabular}}
+    \end{tabular}
 \end{table}
 
 \begin{table}[h]
 \centering
-\fontsize{12}{10}\selectfont
-\resizebox{\textwidth}{!}{ % Ajusta a tabela para a largura total da página
-\begin{tabular}{|p{2cm}|p{3cm}|p{4cm}|p{3cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
+\fontsize{8}{10}\selectfont
+
+\begin{tabular}{|p{1cm}|p{3cm}|p{4cm}|p{3cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|}
     \hline
     \hline
     \rowcolor{lightgray}
@@ -893,9 +894,8 @@
     6m/12m = 50\% &
     4m/12m = 33\% \\
     \hline 
-\end{tabular}}\end{table}
+\end{tabular}\end{table}
  
-
 
 \end{landscape}
 \restoregeometry % Voltar com as margens
