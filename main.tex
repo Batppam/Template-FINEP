@@ -1,42 +1,53 @@
 \documentclass[a4paper,12pt]{article}
 
 %===================Packages===================%
-%\usepackage[utf8]{inputenc}
-\usepackage[brazil]{babel} % Idioma
-\usepackage{fontspec}   % Necessário para fontes no XeLaTeX ou LuaLaTeX
-\setmainfont{Arial}     % Define a fonte principal como Arial
-\usepackage{changes}
-\usepackage[hidelinks]{hyperref}   % Links para sumario
-\usepackage{fancyhdr}   % Para cabeçalhos personalizados
-\usepackage{xcolor}     % Para trabalhar com cores e opacidade
-\usepackage{colortbl}   % Para tabelas coloridas
-\usepackage{tabularray} % Tabela com mais recursos
-\usepackage{tabularx}
-\usepackage{longtable}
-\usepackage{footmisc}
-\usepackage{transparent}% Para aplicar opacidade a imagens
-\usepackage{graphicx}   % Imagens
-\usepackage{mdframed} % Pacote para criar caixas retangulares
-\usepackage{gensymb}
-\usepackage[a4paper, headsep=2cm, left=1.5cm, right=1.6cm, top=3cm, bottom=4cm]{geometry}
-\usepackage{tikz}       % Desenho da borda
-\usepackage{array}      % Para ajustar colunas nas tabelas
-\usepackage{multirow}   % Para mesclar células na direção vertical
-\usepackage[table]{xcolor} % Cores nas tabelas
-%\usepackage{everypage} % Para executar comandos no início de cada página
-\usepackage{comment}
-\usepackage{pdflscape}  % Permite configurar páginas em formato paisagem
-%\usepackage{lscape}
-\usepackage[table, svgnames, dvipsnames]{xcolor}
-\usepackage[table,xcdraw]{xcolor}
-\usepackage{makecell, cellspace, caption}
+%\usepackage[utf8]{inputenc}          % Codificação de caracteres (não é necessário com XeLaTeX ou LuaLaTeX)
+\setlength{\headheight}{85.19962pt}  % Ajuste da altura do cabeçalho
+\usepackage[brazil]{babel}           % Idioma em português do Brasil
+\usepackage{fontspec}                % Necessário para fontes no XeLaTeX ou LuaLaTeX
+\setmainfont{Arial}                  % Define a fonte principal como Arial
+
+
+\usepackage{changes}                 % Controle de mudanças
+\usepackage[hidelinks]{hyperref}     % Links sem bordas coloridas
+\usepackage{fancyhdr}                % Cabeçalhos personalizados
+\usepackage[table, xcdraw]{xcolor}   % Para trabalhar com cores e opacidade
+\usepackage{colortbl}                % Tabelas coloridas
+\usepackage{tabularray}              % Tabelas com mais recursos
+\usepackage{tabularx}                % Tabelas com largura ajustável
+\usepackage{longtable}               % Tabelas que podem se estender por várias páginas
+\usepackage{footmisc}                % Personalização de notas de rodapé
+
+\setlength{\headheight}{4pt}        % Correção da altura do cabeçalho
+\setlength{\marginparwidth}{2cm}     % Largura adequada para notas na margem
+\usepackage{todonotes}               % Notas de "TODO" na margem
+
+\usepackage{transparent}             % Transparência para imagens
+\usepackage{graphicx}                % Suporte para imagens
+\usepackage{mdframed}                % Caixas retangulares
+\usepackage{textcomp}                % Símbolos de texto extras (como \textperthousand)
+\usepackage{gensymb}                 % Para símbolos (grau, micro, etc.)
+\usepackage[a4paper, headsep=2cm, left=1.5cm, right=1.6cm, top=3cm, bottom=4cm]{geometry} % Configuração da página
+
+\usepackage{tikz}                    % Desenho de bordas e gráficos
+\usepackage{array}                   % Ajuste de colunas em tabelas
+\usepackage{multirow}                % Células mescladas verticalmente em tabelas
+
+\usepackage{comment}                 % Comentários de blocos de texto
+\usepackage{pdflscape}               % Configurar páginas em formato paisagem
+
+\usepackage[table,xcdraw,svgnames,dvipsnames]{xcolor}  % Opções adicionais de cores
+
+\usepackage{makecell, cellspace, caption} % Células avançadas com espaçamento e legendas
 \setlength\cellspacetoplimit{3pt}
 \setlength\cellspacebottomlimit{3pt}
-\usepackage{multirow}
-\usepackage{fancybox}
-\usepackage{enumitem}   % Para controle avançado de listas
+
+\usepackage{fancybox}                % Caixas decorativas (sombreados, cantos arredondados, etc.)
+\usepackage{enumitem}                % Controle avançado de listas (personalização de bullets, espaçamento)
 
 \renewcommand{\arraystretch}{1.2} % Aumenta o espaçamento entre as linhas da tabela
+\newcommand{\micro}{\textmu}
+
 %===================Command===================%
 %Cabeçalho
 \newcommand{\BeneficiariaProponente}{ADD}
@@ -121,7 +132,7 @@
 %===================Capa===================%
 
 %\setlength{\headheight}{20pt}% Aumenta a altura do cabeçalho
-\setlength{\headsep}{85 pt} % Espaçamento entre o cabeçalho e o texto
+\setlength{\headsep}{105 pt} % Espaçamento entre o cabeçalho e o texto
 % Linhas horizontais no cabeçalho
 
 %===================Rodapé===================%
@@ -155,11 +166,11 @@
 \end{center}
 
 \vspace{1cm}
-
+\raggedright
 \textbf{Termo de Outorga, Nº:} \\
-
+\vspace{0.5cm}
 \textbf{Beneficiária Proponente:} \\
-
+\vspace{0.5cm}
 \textbf{Período de execução deste relatório \fontsize{8}{10}\selectfont(mm/aa a mm/aa):}
 
 %\restoregeometry % Voltar com as margens
@@ -254,7 +265,9 @@
 \subsection{Beneficiária Proponente}
 \vspace{-1cm} % Subir tabela
 %\begin{tabular}{|p{6.5cm}||p{2cm}||p{6cm}|} % Adiciona linhas verticais entre as colunas
+
 \begin{table}[h]
+\centering
 \resizebox{\textwidth}{!}{ % Ajusta a tabela para a largura total da página
 \fontsize{8}{10}\selectfont
 \begin{tabular}{|p{4.25cm}||p{4.25cm}||p{0.5cm}||p{6cm}|} 
@@ -341,6 +354,7 @@
 \subsection{Projeto}
 \vspace{-1cm} % Subir tabela
 \begin{table}[h]
+\centering
 \resizebox{\textwidth}{!}{ % Ajusta a tabela para a largura total da página
 \fontsize{8}{10}\selectfont
 \begin{tabular}{|p{4cm}||p{4cm}||p{3cm}||p{4cm}|} 
@@ -384,6 +398,7 @@
 \vspace{-1.2cm} % Subir tabela
 %\begin{tabular}{|p{6.5cm}||p{2cm}||p{6cm}|} % Adiciona linhas verticais entre as colunas
 \begin{table}[h]
+\centering
 \resizebox{\textwidth}{!}{ % Ajusta a tabela para a largura total da página
 \fontsize{8}{10}\selectfont
 \begin{tabular}{|p{4.25cm}||p{4.25cm}||p{0.5cm}||p{6cm}|} 
@@ -477,6 +492,7 @@
 \vspace{-0.7cm} % Subir tabela
 %\begin{tabular}{|p{6.5cm}||p{2cm}||p{6cm}|} % Adiciona linhas verticais entre as colunas
 \begin{table}[h]
+\centering
 \resizebox{\textwidth}{!}{ % Ajusta a tabela para a largura total da página
 \fontsize{8}{10}\selectfont
 \begin{tabular}{|p{4.25cm}||p{4.25cm}||p{0.5cm}||p{6cm}|} 
@@ -561,6 +577,7 @@
 \subsection{Co-executor N (caso exista)}
 \vspace{-0.7cm} % Subir tabela
 \begin{table}[h]  
+\centering
 \resizebox{\textwidth}{!}{ % Ajusta a tabela para a largura total da página
 \fontsize{8}{10}\selectfont
 \begin{tabular}{|p{4.25cm}||p{4.25cm}||p{0.5cm}||p{6cm}|} 
